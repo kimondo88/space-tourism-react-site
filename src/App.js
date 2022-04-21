@@ -1,5 +1,5 @@
 import './App.css';
-
+import { Link } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,7 @@ function App() {
             <h1 className="ff-serif uppercase">Design system</h1>
             <Colors />
             <Typography />
+            <IntElements />
         </div>
     </div>
   );
@@ -25,7 +26,7 @@ function Colors(){
             <div className="colors__divs ff-serif fs-500" style={{"color" : "white"}}>
                 #0B0D17
             </div>
-            <p className="txt-white flex ff-serif"><span className="txt-light ">RGB</span>11, 13, 23</p>
+            <p className="txt-white flex ff-serif my-1"><span className="txt-light ">RGB</span>11, 13, 23</p>
             <p className="txt-white flex ff-serif"><span className="txt-light">HSL</span>230°, 35%, 7%</p>
           </div>
           <div className="block">
@@ -33,7 +34,7 @@ function Colors(){
               "color" : "black"}}>
                 #D0D6F9
             </div>
-            <p className="txt-white flex ff-serif"><span className="txt-light">RGB</span> 11, 13, 23</p>
+            <p className="txt-white flex ff-serif my-1"><span className="txt-light">RGB</span> 11, 13, 23</p>
             <p className="txt-white flex ff-serif"><span className="txt-light">HSL</span>230°, 35%, 7%</p>
           </div>
           <div className="block">
@@ -41,7 +42,7 @@ function Colors(){
             "color" : "black"}}>
                 #FFFFFF
             </div>
-            <p className="txt-white flex ff-serif"><span className="txt-light">RGB</span>11, 13, 23</p>
+            <p className="txt-white flex ff-serif my-1"><span className="txt-light">RGB</span>11, 13, 23</p>
             <p className="txt-white flex ff-serif"><span className="txt-light">HSL</span>230°, 35%, 7%</p>
           </div>
       </div>
@@ -54,7 +55,7 @@ function Typography(){
     <section id="typography"  style={{"margin": "4rem 0"}}>
       <h2 className='numbered-title'><span>02 </span>Typography</h2>
       <div className="flex">
-          <div className='flex-basis-100'>
+          <div className='flex-basis-100 flow'>
               <div> 
                   <p className='txt-light ff-serif'>Heading 1 - Bellefair Regular - 150px</p>
                   <p className='ff-serif uppercase fs-900'>Earth</p>
@@ -78,7 +79,7 @@ function Typography(){
           
           </div>
           
-          <div className='flex-basis-100'>
+          <div className='flex-basis-100 flow'>
               <div> 
                   <p className='txt-light ff-serif'>Subheading 1 - Bellefair Regular - 28px</p>
                   <p className='ff-serif fs-500'>384,400 km</p>
@@ -102,4 +103,32 @@ function Typography(){
 
 }
 
+function IntElements(){
+  return (
+    <section className='flow' id="interactive-elements">
+                <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
+                
+                {/* <!-- navigation --> */}
+                <div></div>
+                
+                <div class="flex">
+                    <div className='my-5'>
+                        {/* <!-- explore button --> */}
+                        <Link className="large-button bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
+                    </div>
+                    
+                    <div>
+                        {/* <!-- Tabs --> */}
+                        
+                        
+                         {/* <!-- Dots --> */}
+                        
+                        
+                        {/*<!-- Numbers --> */}
+                    </div>
+                </div>
+                
+            </section>
+  )
+}
 export default App;
