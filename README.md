@@ -1,6 +1,6 @@
 # Hello Welcome to Space Tourism App but in React
- - Project based on guide via [Scrimba.com] by Kevin Powell
- - Starter files, figma provided by [frontendmentor.io]
+ - Project based on guide via [Scrimba.com](https://scrimba.com/learn/spacetravel) by Kevin Powell
+ - Starter files, figma provided by [frontendmentor.io](https://frontendmentor.io)
     **Will be built in React.js library.**
  
 # Getting Started with Create React App
