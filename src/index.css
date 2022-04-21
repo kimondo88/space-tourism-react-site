@@ -130,8 +130,11 @@ input, button, textarea, select{
 .p-1{
   padding: 1rem;
 }
-.p-1--r{
-  padding-right: 1rem;
+.pyb-1h{
+  padding-block: 1.5rem;
+}
+.mxr-1{
+  margin-right: 1rem;
 }
 .my-1{
   margin-top: 1rem;
@@ -157,6 +160,9 @@ input, button, textarea, select{
 }
 .bg-white{
   background-color: hsl(var(--clr-white));
+}
+.bg-white--alpha{
+  background-color: hsl(var(--clr-white) / .04);
 }
 .txt-dark{
   color: hsl(var(--clr-dark));
@@ -208,7 +214,12 @@ input, button, textarea, select{
 .flex-basis-100{
   flex-basis: 100%;
 }
-
+.flex-center{
+  place-content: center;
+}
+.flex-gap-8{
+  gap: 8rem;
+}
 /* ------------- */
 /*  ids          */
 /* ------------- */
@@ -268,4 +279,19 @@ input, button, textarea, select{
 .large-button:hover::before{
   opacity: 1;
   transform: scale(1.5);
+}
+.primary-navigation{
+  list-style: none;
+  margin: 0;
+}
+
+.primary-navigation a{
+  text-decoration: none;
+}
+.primary-navigation a > span{
+  font-weight: 700;
+}
+.underline-indicator{
+  border-bottom: 2px solid hsl( var(--clr-white) / var(--alpha, 1));
+  padding-block: 1.7rem;
 }

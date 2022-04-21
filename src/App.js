@@ -109,9 +109,32 @@ function IntElements(){
                 <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
                 
                 {/* <!-- navigation --> */}
-                <div></div>
+                <div>
+                  <nav>
+                      <ul className="primary-navigation  bg-white--alpha flex flex-center flex-gap-8 pyb-1h">
+                          <li>
+                            <Link className="txt-white underline-indicator ff-serif fs-200 letter-spacing-2 uppercase" to="/">
+                              <span className='mxr-1'>00</span>Active
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                            className="txt-white underline-indicator ff-serif fs-200 letter-spacing-2 uppercase" 
+                            style={{"--alpha" : '.5'}}
+                            to="/">
+                              <span className='mxr-1'>01</span>Hovered
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" to="/">
+                              <span className='mxr-1'>02</span>Idle                           
+                            </Link>
+                          </li>
+                      </ul>
+                  </nav>
+                </div>
                 
-                <div class="flex">
+                <div className="flex">
                     <div className='my-5'>
                         {/* <!-- explore button --> */}
                         <Link className="large-button bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
