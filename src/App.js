@@ -7,7 +7,7 @@ function App() {
         
       </header>
       <div className="container">
-            <h1>Design system</h1>
+            <h1 className="ff-serif">Design system</h1>
             <Colors />
         </div>
     </div>
