@@ -8,6 +8,7 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Homepage from './feature/homepage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,8 +16,10 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        {/* <Route index element={<DesignSystem />} /> */}
+        {/* <Route index element={<Homepage />} />  */}
+          
       </Route>
+      <Route path="/home" element={<Homepage />}/>
     </Routes>
   </BrowserRouter>,
   </React.StrictMode>

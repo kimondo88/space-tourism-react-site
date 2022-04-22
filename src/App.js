@@ -150,12 +150,12 @@ function IntElements(){
                               <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button>
                               <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button>
                             </div>
-                            <p className='ff-serif txt-light fs-300 self-center'>Tabs(Active, Hover & Idle)</p>
+                            <p className='ff-sans-cond txt-light fs-200 self-center'>Tabs(Active, Hover & Idle)</p>
                         </div>
                         
                          {/* <!-- Dots --> */}
                          <div className="flex flex-col">
-                            <div className="flex flex flex-ic dot-indicators">
+                            <div className="flex flex flex-ic dot-indicators" aria-required>
                               <button aria-pressed="true"><span className='sr-only'>
                                 Slide title</span></button>
                               <button aria-pressed="false"><span className='sr-only'>
@@ -163,20 +163,20 @@ function IntElements(){
                               <button aria-pressed="false"><span className='sr-only'>
                                 Slide title</span></button>
                             </div>
-                            <p className='ff-serif txt-light fs-300 self-center'>Slider 1 States (Active, Hover & Idle)</p>
+                            <p className='ff-sans-cond txt-light fs-200 self-center'>Slider 1 States (Active, Hover & Idle)</p>
                         </div>
                         
                         {/*<!-- Numbers --> */}
                         <div className="flex flex-col">
-                            <div className="flex flex-col self-center num-indicators">
-                              <button className='active'>
-                                1</button>
-                              <button>
-                                2</button>
-                              <button>
-                                3</button>
+                            <div className="flex flex-col self-center num-indicators" aria-required>
+                              <button className='active' aria-pressed="true">1
+                                </button>
+                              <button aria-pressed="false">2
+                                </button>
+                              <button aria-pressed="false">3
+                                </button>
                             </div>
-                            <p className='ff-serif txt-light fs-300 self-center'>Slider 2 States (Active, Hover & Idle)</p>
+                            <p className='ff-sans-cond txt-light fs-200 self-center'>Slider 2 States (Active, Hover & Idle)</p>
                         </div>
                     </div>
                 </div>
