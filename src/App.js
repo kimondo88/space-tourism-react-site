@@ -134,7 +134,7 @@ function IntElements(){
                 </div>
                 
                 <div className="flex">
-                    <div className='my-5 flex flex-column'>
+                    <div className='my-5 flex flex-col'>
                         {/* <!-- explore button --> */}
                         <Link className="large-button bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
                         <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Idle</p>
@@ -142,25 +142,42 @@ function IntElements(){
                         <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Hover</p>
                     </div>
                     
-                    <div className='flow flex flex-column flex-center flex-basis-100' style={{"--flow-space" : " 5rem"}}>
+                    <div className='flow flex flex-col flex-around' style={{"--flow-space" : " 1rem", "width" : "100%"}}>
                         {/* <!-- Tabs --> */}
-                        <div className='tabs underline-indicator flex self-center' aria-required>
-                            <button aria-pressed="true" className='bg-dark ff-sans-cond fs-200 txt-white letter-spacing-2 uppercase active'>Moon</button>
-                            <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button>
-                            <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button>
+                        <div className='tabs flex flex-col self-center' >
+                            <div className="flex underline-indicator" aria-required>
+                              <button aria-pressed="true" className='bg-dark ff-sans-cond fs-200 txt-white letter-spacing-2 uppercase active'>Moon</button>
+                              <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button>
+                              <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button>
+                            </div>
+                            <p className='ff-serif txt-light fs-300 self-center'>Tabs(Active, Hover & Idle)</p>
                         </div>
-                        <p className='ff-serif txt-light fs-300 self-center'>Tabs(Active, Hover & Idle)</p>
+                        
                          {/* <!-- Dots --> */}
-                         <div className="dot-indicators flex flex-ic">
-                            <button aria-pressed="true"><span className='sr-only'>
-                              Slide title</span></button>
-                            <button aria-pressed="false"><span className='sr-only'>
-                              Slide title</span></button>
-                            <button aria-pressed="false"><span className='sr-only'>
-                              Slide title</span></button>
+                         <div className="flex flex-col">
+                            <div className="flex flex flex-ic dot-indicators">
+                              <button aria-pressed="true"><span className='sr-only'>
+                                Slide title</span></button>
+                              <button aria-pressed="false"><span className='sr-only'>
+                                Slide title</span></button>
+                              <button aria-pressed="false"><span className='sr-only'>
+                                Slide title</span></button>
+                            </div>
+                            <p className='ff-serif txt-light fs-300 self-center'>Slider 1 States (Active, Hover & Idle)</p>
                         </div>
-                        <p className='ff-serif txt-light fs-300 self-center'>Slider 1 States (Active, Hover & Idle)</p>
+                        
                         {/*<!-- Numbers --> */}
+                        <div className="flex flex-col">
+                            <div className="flex flex-col self-center num-indicators">
+                              <button className='active'>
+                                1</button>
+                              <button>
+                                2</button>
+                              <button>
+                                3</button>
+                            </div>
+                            <p className='ff-serif txt-light fs-300 self-center'>Slider 2 States (Active, Hover & Idle)</p>
+                        </div>
                     </div>
                 </div>
                 

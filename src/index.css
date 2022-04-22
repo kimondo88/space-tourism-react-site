@@ -96,7 +96,6 @@ input, button, textarea, select{
   display: flex;
   gap: var(--gap, 1rem);
 }
-
 .grid{
   display: grid;
   gap: var(--gap, 1rem);
@@ -210,7 +209,7 @@ input, button, textarea, select{
 /* ------------- ------*/
 /*  flex utlity styles*/
 /* ------------- -----*/
-.flex-column{
+.flex-col{
   flex-direction: column;
 }
 .flex-basis-100{
@@ -218,6 +217,10 @@ input, button, textarea, select{
 }
 .flex-center{
   place-content: center;
+}
+.flex-around{
+  justify-content: space-around;
+  align-content: center;
 }
 .flex-ic{
   justify-content: center;
@@ -313,7 +316,7 @@ input, button, textarea, select{
 }
 
 .underline-indicator > .active, 
-.underline-indicator > *[aria-pressed=true]{
+.underline-indicator > [aria-pressed="true"]{
   color: hsl( var(--clr-white) / 1);
   border-color: hsl( var(--clr-white) / 1)
 }
@@ -327,14 +330,36 @@ input, button, textarea, select{
   border: 0;
   aspect-ratio: 1;
   padding: 0.5em;
-  background-color: hsl( var(--clr-light) / 0.1)
+  background-color: hsl( var(--clr-white) / 0.25)
 }
 
-.dot-indicators > *:hover{
-  background-color: hsl( var(--clr-light) / .5)
+.dot-indicators > *:hover,
+.dot-indicators > *:focus{
+  background-color: hsl( var(--clr-white) / .5)
 }
 
-.dot-indicators > *[aria-pressed=true]{
-  background-color: hsl( var(--clr-light) / 1)
+.dot-indicators > [aria-pressed="true"]{
+  background-color: hsl( var(--clr-white) / 1)
 }
 
+.num-indicators > *{
+  width: fit-content;
+  cursor: pointer;
+  color:hsl( var(--clr-white));
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0.5em;
+  background-color: hsl( var(--clr-white) / 0);
+  border: 2px solid hsl( var(--clr-white) / .25);
+}
+
+.num-indicators > *:hover,
+.num-indicators > *:focus{
+  border-color: hsl( var(--clr-white) / .5);
+}
+
+.num-indicators > .active{
+  color: hsl( var(--clr-dark));
+  background-color: hsl( var(--clr-white) / 1);
+}
