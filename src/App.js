@@ -111,21 +111,20 @@ function IntElements(){
                 {/* <!-- navigation --> */}
                 <div>
                   <nav>
-                      <ul className="primary-navigation  bg-white--alpha flex flex-center flex-gap-8 pyb-1h">
-                          <li>
-                            <Link className="txt-white underline-indicator ff-serif fs-200 letter-spacing-2 uppercase" to="/">
+                      <ul className="primary-navigation underline-indicator bg-white--alpha flex flex-center flex-gap-8">
+                          <li className='active'>
+                            <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
                               <span className='mxr-1'>00</span>Active
                             </Link>
                           </li>
                           <li>
                             <Link 
-                            className="txt-white underline-indicator ff-serif fs-200 letter-spacing-2 uppercase" 
-                            style={{"--alpha" : '.5'}}
+                            className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" 
                             to="/">
                               <span className='mxr-1'>01</span>Hovered
                             </Link>
                           </li>
-                          <li>
+                          <li className="pyb-1h">
                             <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" to="/">
                               <span className='mxr-1'>02</span>Idle                           
                             </Link>
@@ -135,18 +134,32 @@ function IntElements(){
                 </div>
                 
                 <div className="flex">
-                    <div className='my-5'>
+                    <div className='my-5 flex flex-column'>
                         {/* <!-- explore button --> */}
                         <Link className="large-button bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
+                        <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Idle</p>
+                        <Link className="large-button anim bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
+                        <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Hover</p>
                     </div>
                     
-                    <div>
+                    <div className='flow flex flex-column flex-center flex-basis-100' style={{"--flow-space" : " 5rem"}}>
                         {/* <!-- Tabs --> */}
-                        
-                        
+                        <div className='tabs underline-indicator flex self-center' aria-required>
+                            <button aria-pressed="true" className='bg-dark ff-sans-cond fs-200 txt-white letter-spacing-2 uppercase active'>Moon</button>
+                            <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button>
+                            <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button>
+                        </div>
+                        <p className='ff-serif txt-light fs-300 self-center'>Tabs(Active, Hover & Idle)</p>
                          {/* <!-- Dots --> */}
-                        
-                        
+                         <div className="dot-indicators flex flex-ic">
+                            <button aria-pressed="true"><span className='sr-only'>
+                              Slide title</span></button>
+                            <button aria-pressed="false"><span className='sr-only'>
+                              Slide title</span></button>
+                            <button aria-pressed="false"><span className='sr-only'>
+                              Slide title</span></button>
+                        </div>
+                        <p className='ff-serif txt-light fs-300 self-center'>Slider 1 States (Active, Hover & Idle)</p>
                         {/*<!-- Numbers --> */}
                     </div>
                 </div>
