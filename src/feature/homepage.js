@@ -8,22 +8,30 @@ export default function Homepage() {
 
         }else{
             body.classList.toggle('bg-home-d');
-        }  
+        }
+        return () =>{
+            body.classList.toggle('bg-home-d');
+        }
     },[])
 
     return (
         <div className="flex flex-col flex-between">
-            <nav className="flex flex-end my-3">
-                <ul className="primary-navigation underline-indicator flex flex-basis-60 bg-dark--alpha">
-                    <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/"><span className="mxr-1">00</span>Home</Link></li>
-                    <li><Link className="txt-white ff-sans cond letter-spacing-2 fs-300" to="/">
-                        <span className="mxr-1">01</span> Destination</Link></li>
-                    <li><Link className="txt-white ff-sans cond letter-spacing-2 fs-300" to="/">
-                        <span className="mxr-1">02</span> Crew</Link> </li>
-                    <li><Link className="txt-white ff-sans cond letter-spacing-2 fs-300" to="/">
-                        <span className="mxr-1">03</span> Technology</Link> </li>
-                </ul>
-            </nav>
+            <header className="primary-navigation">
+                <div>
+                    <img src='' alt=""/>
+                </div>
+                <nav className="flex flex-end my-3">
+                    <ul className="primary-navigation underline-indicator flex flex-basis-60 bg-dark--alpha">
+                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/"><span className="mxr-1">00</span>Home</Link></li>
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/">
+                            <span className="mxr-1">01</span> Destination</Link></li>
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/">
+                            <span className="mxr-1">02</span> Crew</Link> </li>
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/">
+                            <span className="mxr-1">03</span> Technology</Link> </li>
+                    </ul>
+                </nav>
+            </header>
 
             <div className="flex" style={{
                 "width" : "80%", "marginTop" : "15%", 

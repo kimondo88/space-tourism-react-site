@@ -155,7 +155,7 @@ function IntElements(){
                         
                          {/* <!-- Dots --> */}
                          <div className="flex flex-col">
-                            <div className="flex flex flex-ic dot-indicators" aria-required>
+                            <div className="flex flex flex-cc dot-indicators" aria-required>
                               <button aria-pressed="true"><span className='sr-only'>
                                 Slide title</span></button>
                               <button aria-pressed="false"><span className='sr-only'>
