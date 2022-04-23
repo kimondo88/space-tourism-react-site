@@ -6,11 +6,12 @@
 *, *::before, *::after{
   box-sizing: border-box;
 }
-
+/* #root{
+  min-height: 100vh;
+} */
 /* --------------------------- */
 /* html css custom properties  */
 /* --------------------------- */
-
 html{
   --gap: 2rem;
   /* colors */
@@ -54,6 +55,10 @@ h1, h2,
 h3, h4, 
 h5, p, span{
   font-weight: 400;
+}
+/* set up max ch width */
+p {
+  max-width: 60ch;
 }
 
 /* set up the body */
@@ -229,6 +234,9 @@ input, button, textarea, select{
 .flex-col{
   flex-direction: column;
 }
+.flex-grow{
+  flex-grow: 1;
+}
 .flex-basis-100{
   flex-basis: 100%;
 }
@@ -242,10 +250,19 @@ input, button, textarea, select{
   justify-content: space-around;
   align-content: center;
 }
+.flex-between{
+  justify-content: space-between;
+}
 .flex-end{
   justify-content: flex-end;
 }
+.flex-als-end{
+  align-self: flex-end;
+}
 .flex-ic{
+  justify-items: center;
+}
+.flex-cc{
   justify-content: center;
 }
 .flex-gap-8{
