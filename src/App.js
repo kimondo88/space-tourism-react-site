@@ -138,7 +138,7 @@ function IntElements(){
                         {/* <!-- explore button --> */}
                         <Link className="large-button bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
                         <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Idle</p>
-                        <Link className="large-button anim bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
+                        <Link className="large-button anim bg-white txt-dark fs-600 ff-serif uppercase" to="/home">Explore</Link>
                         <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Hover</p>
                     </div>
                     

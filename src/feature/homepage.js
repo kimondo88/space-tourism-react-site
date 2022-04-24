@@ -18,7 +18,7 @@ export default function Homepage() {
         <div className="flex flex-col flex-between">
             <header className="primary-navigation flex">
                 <div className="self-center my-3" style={{"flexBasis" : "10%"}}> 
-                    <img style={{"margin-left" : "5rem"}} src={logo} alt=""/>
+                    <img style={{"marginLeft" : "5rem"}} src={logo} alt=""/>
                 </div>
                 <nav className="flex flex-grow flex-end my-3">
                     <ul className="primary-navigation underline-indicator flex flex-cc flex-basis-60 bg-dark--alpha">
@@ -33,18 +33,16 @@ export default function Homepage() {
                 </nav>
             </header>
 
-            <div className="flex" style={{
-                "width" : "80%", "marginTop" : "15%", 
-                "marginInline" : "auto", "--flow-space" : "3rem"}}>
-                <div className="block flow flex-basis-100">
-                    <p className='txt-light ff-sans-cond uppercase letter-spacing-1 fs-400'>So, you want to travel to</p>
-                    <p className='ff-serif uppercase fs-900'>Space</p>
+            <div className="grid-container my-7">
+                <div className="flow">
+                    <h1 className='txt-light ff-sans-cond uppercase letter-spacing-1 fs-500'>So, you want to travel to<br/>
+                    <span className="txt-white ff-serif uppercase letter-spacing-1 fs-900">Space</span></h1>
                     <p className='txt-light ff-sans-normal fs-400'>Let's face it; if you want to go to space, you might as well genuinely go to
                         outer space and not hover kind of on the edge of it. Well sit back, and relax
                         because we'll give you a truly out of this world experience!</p>
                 </div>
-                <div className="flex mxr-5 flex-als-end" style={{"height": "80%"}}>
-                    <Link className="large-button anim bg-white txt-dark fs-600 ff-serif uppercase" to="/explore">Explore</Link>
+                <div className="flex flex-als-end">
+                    <Link className="large-button anim bg-white txt-dark fs-600 ff-serif uppercase" to="/">Explore</Link>
                 </div>
             </div>
         </div>

@@ -38,6 +38,7 @@ html{
   --flow-space: .5rem;
   --title-space: 1rem;
   --button-space: 5rem;
+  --container-gap: 2rem;
 }
 
 /* reset margins */
@@ -114,7 +115,10 @@ input, button, textarea, select{
   max-width: 80rem;
   margin-inline: auto;
 }
-
+.grid-container{
+  display: grid;
+  margin-inline: auto;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -271,6 +275,7 @@ input, button, textarea, select{
 .self-center{
   align-self: center;
 }
+
 /* ------------- */
 /*  ids          */
 /* ------------- */
@@ -305,7 +310,7 @@ input, button, textarea, select{
 
 .large-button{
   border-radius: 50%;
-  display: grid;
+  display: inline-grid;
   position: relative;
   place-items: center;
   aspect-ratio: 1;
@@ -403,4 +408,23 @@ input, button, textarea, select{
 .num-indicators > .active{
   color: hsl( var(--clr-dark));
   background-color: hsl( var(--clr-white) / 1);
+}
+
+/* ------------------- */
+/* MEDIA QUERIES       */
+/* ------------------- */
+
+@media (min-width: 900px){
+  .grid-container{
+    grid-template-columns: minmax(2em, 1fr) minmax(0, 40ch) minmax(0, 40rem) minmax(2em, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: var(--container-gap, 2rem);
+  }
+  .grid-container > *:first-child{
+    grid-column: 2;
+  }
+  .grid-container > *:last-child{
+    grid-column: 3;
+    place-content: flex-end;
+  }
 }
