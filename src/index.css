@@ -179,7 +179,7 @@ input, button, textarea, select{
   background-color: hsl(var(--clr-white));
 }
 .bg-dark--alpha{
-  background-color: hsl(var(--clr-dark) / .04);
+  background-color: hsl(var(--clr-white) / .04);
   backdrop-filter: blur(81.5485px);
 }
 .bg-white--alpha{
