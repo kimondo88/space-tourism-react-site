@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/shared/logo.svg"
 export default function Homepage() {
     useEffect(()=>{
         const body = document.querySelector('body');
@@ -16,11 +16,11 @@ export default function Homepage() {
 
     return (
         <div className="flex flex-col flex-between">
-            <header className="primary-navigation">
-                <div>
-                    <img src='' alt=""/>
+            <header className="primary-navigation flex">
+                <div className="self-center my-3"> 
+                    <img src={logo} alt=""/>
                 </div>
-                <nav className="flex flex-end my-3">
+                <nav className="flex flex-grow flex-end my-3">
                     <ul className="primary-navigation underline-indicator flex flex-basis-60 bg-dark--alpha">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/"><span className="mxr-1">00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2 fs-300" to="/">
