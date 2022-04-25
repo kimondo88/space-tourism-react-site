@@ -130,7 +130,7 @@ input, button, textarea, select{
 }
 .grid{
   display: grid;
-  height: 100vh;
+  min-height: 100%;
   grid-template-rows: min-content 1fr;
 }
 /* select in flow, childs that have siblings before them to make them margin-top */
