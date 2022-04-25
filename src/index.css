@@ -71,6 +71,7 @@ h5,
 p, 
 figure, picture {
   margin: 0;
+  padding: 0;
 }
 
 /* reset weight */
@@ -129,7 +130,8 @@ input, button, textarea, select{
 }
 .grid{
   display: grid;
-  gap: var(--gap, 1rem);
+  height: 100vh;
+  grid-template-rows: min-content 1fr;
 }
 /* select in flow, childs that have siblings before them to make them margin-top */
 .flow > * + * {
@@ -194,6 +196,7 @@ input, button, textarea, select{
   background-image: url("../public/assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom center;
 }
 
 /* colors */
@@ -285,9 +288,6 @@ input, button, textarea, select{
 .flex-end{
   justify-content: flex-end;
 }
-.flex-als-end{
-  align-self: flex-end;
-}
 .flex-ic{
   justify-items: center;
 }
@@ -304,17 +304,18 @@ input, button, textarea, select{
 /* grid properties */
 
 .grid-container{
+  align-self: end;
   text-align: center;
-  place-items: center;
-  padding-top: var(--grid-pt, 3rem);
-  row-gap: 10%;
-}
-
-.grid-container > .m-button{
-  margin-top: 2rem;
+  justify-content: center;
+  align-content: center;
+  row-gap: max(1em, 5vh);
+  padding-bottom: max(2em, 10vh);
 }
 .grid-container > * {
   max-width: 46ch;
+}
+.grid-container > * > p {
+  padding-inline: 5%;
 }
 /* ------------- */
 /*  ids          */
@@ -458,6 +459,12 @@ input, button, textarea, select{
 /* MEDIA QUERIES       */
 /* ------------------- */
 @media (min-width: 600px){
+  .grid-container{
+    padding-top: max(1em, 3em)
+  }
+  .grid-container > * > p {
+    padding-inline: 0;
+  }
   .primary-navigation{
     display: flex;
     flex-basis: 30%;
@@ -480,8 +487,8 @@ input, button, textarea, select{
     grid-template-columns: minmax(2em, 1fr) minmax(0, 40ch) minmax(0, 40rem) minmax(2em, 1fr);
     grid-template-rows: 1fr;
     column-gap: var(--container-gap, 2rem);
-    --grid-pt: 7rem;
     text-align: left;
+    align-items: end;
   }
   .grid-container > *:first-child{
     grid-column: 2;
@@ -492,8 +499,12 @@ input, button, textarea, select{
   }
   .primary-navigation{
     flex-basis: 60%;
+    padding-left: 5em;
     --gap: 0.5rem;
     --underline-gap: 1.5rem;
+  }
+  .m-button{
+    justify-self: end;
   }
   .bg-home-d{
     background-image: url("/public/assets/home/background-home-desktop.jpg");
