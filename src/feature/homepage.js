@@ -15,7 +15,7 @@ export default function Homepage() {
     },[])
 
     const menu = () => {
-        const button = document.querySelector('.sr-only');
+        const button = document.querySelector('.mobile-nav-toggle');
         let change = button.getAttribute('aria-expanded');
         change !== 'true' 
             ? button.setAttribute('aria-expanded', 'true') : button.setAttribute('aria-expanded', 'false')
@@ -31,7 +31,7 @@ export default function Homepage() {
                 <div className="self-center my-3" style={{"flexBasis" : "10%"}}> 
                     <img style={{"marginLeft" : "5rem"}} src={logo} alt=""/>
                 </div>
-                <button className="mobile-nav-toggle" aria-controls="primary-navigation" onClick={menu}>
+                <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" onClick={menu}>
                     <span className="sr-only" aria-expanded="false">Menu</span>
                     </button>
                 <nav id="primary-navigation" className="flex flex-grow flex-end my-3">

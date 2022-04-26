@@ -474,7 +474,7 @@ input, button, textarea, select{
     padding-left: 5%;
     inset: 0 0 0 30%;
     z-index: 100;
-    
+    transition: transform ease-in-out 200ms;
   }
   .primary-navigation[data-visible="true"]{
     transform: translateX(0);
@@ -495,8 +495,14 @@ input, button, textarea, select{
     aspect-ratio: 1;
     background-repeat: no-repeat;
     background: transparent;
-    background-image: url("/src/assets/shared/icon-hamburger.svg");
     border: 0;
+  }
+  .mobile-nav-toggle[aria-expanded="false"]{
+    background-image: url("/src/assets/shared/icon-hamburger.svg");
+  }
+  .mobile-nav-toggle[aria-expanded="true"]{
+    width: 1.3rem;
+    background-image: url("/src/assets/shared/icon-close.svg");
   }
 }
 
