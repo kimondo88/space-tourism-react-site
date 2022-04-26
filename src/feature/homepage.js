@@ -27,14 +27,14 @@ export default function Homepage() {
 
     return (
         <div className="grid">
-            <header className="flex">
+            <header className="flex flex-between">
                 <div className="self-center" style={{"flexBasis" : "10%"}}> 
                     <img className="logo" src={logo} alt=""/>
                 </div>
                 <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" onClick={menu}>
                     <span className="sr-only" aria-expanded="false">Menu</span>
                     </button>
-                <nav id="primary-navigation" className="flex flex-grow flex-end">
+                <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
@@ -50,8 +50,8 @@ export default function Homepage() {
            
             <div className="grid-container">
                 <div className="flow">
-                    <h1 className='txt-light ff-sans-cond uppercase letter-spacing-1'>So, you want to travel to<br/>
-                    <span className="txt-white ff-serif uppercase letter-spacing-1 fs-900">Space</span></h1>
+                    <h1 className='txt-light ff-sans-cond uppercase letter-spacing-1'>So, you want to travel to
+                    <span style={{"display" : "block" }} className="txt-white ff-serif uppercase letter-spacing-1 fs-900">Space</span></h1>
                     <p className='txt-light ff-sans-normal fs-400'>Let's face it; if you want to go to space, you might as well genuinely go to
                         outer space and not hover kind of on the edge of it. Well sit back, and relax
                         because we'll give you a truly out of this world experience!</p>
