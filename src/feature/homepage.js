@@ -28,13 +28,13 @@ export default function Homepage() {
     return (
         <div className="grid">
             <header className="flex">
-                <div className="self-center my-3" style={{"flexBasis" : "10%"}}> 
-                    <img style={{"marginLeft" : "5rem"}} src={logo} alt=""/>
+                <div className="self-center" style={{"flexBasis" : "10%"}}> 
+                    <img className="logo" src={logo} alt=""/>
                 </div>
                 <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" onClick={menu}>
                     <span className="sr-only" aria-expanded="false">Menu</span>
                     </button>
-                <nav id="primary-navigation" className="flex flex-grow flex-end my-3">
+                <nav id="primary-navigation" className="flex flex-grow flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
