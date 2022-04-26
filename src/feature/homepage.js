@@ -20,7 +20,9 @@ export default function Homepage() {
         change !== 'true' 
             ? button.setAttribute('aria-expanded', 'true') : button.setAttribute('aria-expanded', 'false')
         let element = document.querySelector('.primary-navigation');
-        element.classList.toggle('primary-navigation--toggle');
+        change = element.getAttribute('data-visible');
+        change !== "true"
+            ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
 
     return (
@@ -33,7 +35,7 @@ export default function Homepage() {
                     <span className="sr-only" aria-expanded="false">Menu</span>
                     </button>
                 <nav id="primary-navigation" className="flex flex-grow flex-end my-3">
-                    <ul className="primary-navigation underline-indicator flex bg-dark--alpha ">
+                    <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span>01</span> Destination</Link></li>

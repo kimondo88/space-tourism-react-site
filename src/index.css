@@ -98,7 +98,6 @@ body {
   background-color: hsl( var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
-  overflow-y: hidden;
 }
 
 /* make image easier to use */
@@ -475,10 +474,13 @@ input, button, textarea, select{
     padding-left: 5%;
     inset: 0 0 0 30%;
     z-index: 100;
-    transform: translateX(100%);
+    
   }
-  .primary-navigation--toggle{
+  .primary-navigation[data-visible="true"]{
     transform: translateX(0);
+  }
+  .primary-navigation[data-visible="false"]{
+    transform: translateX(100%);
   }
   .primary-navigation.underline-indicator > .active{
     border-bottom: none;
