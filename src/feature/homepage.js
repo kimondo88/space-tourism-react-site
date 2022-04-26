@@ -14,13 +14,25 @@ export default function Homepage() {
         }
     },[])
 
+    const menu = () => {
+        const button = document.querySelector('.sr-only');
+        let change = button.getAttribute('aria-expanded');
+        change !== 'true' 
+            ? button.setAttribute('aria-expanded', 'true') : button.setAttribute('aria-expanded', 'false')
+        let element = document.querySelector('.primary-navigation');
+        element.classList.toggle('primary-navigation--toggle');
+    }
+
     return (
         <div className="grid">
             <header className="flex">
                 <div className="self-center my-3" style={{"flexBasis" : "10%"}}> 
                     <img style={{"marginLeft" : "5rem"}} src={logo} alt=""/>
                 </div>
-                <nav className="flex flex-grow flex-end my-3">
+                <button className="mobile-nav-toggle" aria-controls="primary-navigation" onClick={menu}>
+                    <span className="sr-only" aria-expanded="false">Menu</span>
+                    </button>
+                <nav id="primary-navigation" className="flex flex-grow flex-end my-3">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha ">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">

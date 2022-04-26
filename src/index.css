@@ -98,6 +98,7 @@ body {
   background-color: hsl( var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 
 /* make image easier to use */
@@ -130,7 +131,7 @@ input, button, textarea, select{
 }
 .grid{
   display: grid;
-  min-height: 100%;
+  min-height: 100vh;
   grid-template-rows: min-content 1fr;
 }
 /* select in flow, childs that have siblings before them to make them margin-top */
@@ -378,11 +379,14 @@ input, button, textarea, select{
   transform: scale(1.5);
 }
 .primary-navigation{
-  display: none;
-  --underline-gap: 1.5rem;
-  list-style: none;
+  padding: 0; 
   margin: 0;
-  padding: 0;
+  --underline-gap: 2rem;
+  list-style: none;
+}
+
+.mobile-nav-toggle{
+  display: none;
 }
 
 .primary-navigation a{
@@ -392,7 +396,7 @@ input, button, textarea, select{
 }
 .primary-navigation a > span{
   font-weight: 700;
-  margin-right: 0.1rem;
+  margin-right: 0.4rem;
 }
 .underline-indicator > * {
   cursor: pointer;
@@ -458,6 +462,44 @@ input, button, textarea, select{
 /* ------------------- */
 /* MEDIA QUERIES       */
 /* ------------------- */
+
+@media (max-width: 599px){
+  .primary-navigation{
+    --underline-gap: 0.2rem;
+    gap: 3rem;
+    display: flex;
+    position: fixed;
+    place-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 5%;
+    inset: 0 0 0 30%;
+    z-index: 100;
+    transform: translateX(100%);
+  }
+  .primary-navigation--toggle{
+    transform: translateX(0);
+  }
+  .primary-navigation.underline-indicator > .active{
+    border-bottom: none;
+  }
+  .mobile-nav-toggle{
+    display: block;
+    position: absolute;
+    z-index: 120;
+    right: 3rem;
+    top: 4rem;
+    width: 1.4rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background: transparent;
+    background-image: url("/src/assets/shared/icon-hamburger.svg");
+    border: 0;
+  }
+}
+
+
+
 @media (min-width: 600px){
   .grid-container{
     padding-top: max(1em, 3em)
@@ -467,6 +509,10 @@ input, button, textarea, select{
   }
   .primary-navigation{
     display: flex;
+    position: relative;
+    flex-direction: row;
+    inset: unset;
+    padding-block: 0.2rem;
     flex-basis: 30%;
     --gap: 0.2rem;
     --underline-gap: 1rem;
@@ -510,3 +556,12 @@ input, button, textarea, select{
     background-image: url("/public/assets/home/background-home-desktop.jpg");
   }
 }
+
+/* supports queries */
+
+@supports (not (backdrop-filter: blur(81.5485px))){
+  .bg-dark--alpha{
+    background-color: hsl( var(--clr-white) / .95);
+  }
+}
+
