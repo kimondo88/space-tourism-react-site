@@ -34,6 +34,9 @@ export default function Homepage() {
                 <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" onClick={menu}>
                     <span className="sr-only" aria-expanded="false">Menu</span>
                     </button>
+                <div className="line">
+                    <span></span>
+                </div>
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
