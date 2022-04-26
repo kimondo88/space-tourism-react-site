@@ -490,11 +490,12 @@ input, button, textarea, select{
     position: absolute;
     z-index: 120;
     right: 3rem;
-    top: 4rem;
-    width: 1.4rem;
+    top: 7.5%;
+    width: 1.45rem;
     aspect-ratio: 1;
     background-repeat: no-repeat;
     background: transparent;
+    background-position: center;
     border: 0;
   }
   .mobile-nav-toggle[aria-expanded="false"]{
@@ -503,6 +504,10 @@ input, button, textarea, select{
   .mobile-nav-toggle[aria-expanded="true"]{
     width: 1.3rem;
     background-image: url("/src/assets/shared/icon-close.svg");
+  }
+  .mobile-nav-toggle:focus-visible{
+    outline: 5px solid white;
+    outline-offset: 4px;
   }
 }
 
