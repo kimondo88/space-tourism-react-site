@@ -6,13 +6,13 @@ import data from "../data.json";
 export default function Destination() {
     useEffect(()=>{
         const body = document.querySelector('body');
-        if(body.classList.contains('bg-home-d')){
+        if(body.classList.contains('bg-destination')){
 
         }else{
-            body.classList.toggle('bg-home-d');
+            body.classList.toggle('bg-destination');
         }
         return () =>{
-            body.classList.toggle('bg-home-d');
+            body.classList.toggle('bg-destination');
         }
     },[])
 

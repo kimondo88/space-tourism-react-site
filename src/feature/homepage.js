@@ -52,10 +52,15 @@ export default function Homepage() {
             </header>
             <main id="main" className="grid-container">
                 <div className="flow">
-                    <h1 className='numbered-title'><span>01</span>pick your destination</h1>
-                    
+                    <h1 className='txt-light ff-sans-cond uppercase letter-spacing-1'>So, you want to travel to
+                    <span style={{"display" : "block" }} className="txt-white ff-serif uppercase letter-spacing-1 fs-900">Space</span></h1>
+                    <p className='txt-light ff-sans-normal fs-400'>Let's face it; if you want to go to space, you might as well genuinely go to
+                        outer space and not hover kind of on the edge of it. Well sit back, and relax
+                        because we'll give you a truly out of this world experience!</p>
                 </div>
-                
+                <div className="m-button">
+                    <Link className="large-button anim bg-white txt-dark ff-serif uppercase" style={{"fontSize" : "2rem"}}to="/">Explore</Link>
+                </div>
             </main>
         </div>
     )
