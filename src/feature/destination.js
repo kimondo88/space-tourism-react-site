@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/shared/logo.svg"
 import data from "../data.json";
-const planet = data.destinations[0].images.png;
-const temp = require(planet);
 
 export default function Destination() {
     useEffect(()=>{
@@ -83,7 +81,7 @@ export default function Destination() {
 
 function PlanetImage(props){
     return (
-        <img src={temp} alt="planet" >xxxx</img>
+        <img className="img-destination" src={`${props.data.images.png}`} alt="planet"></img>
     )
 }
 
