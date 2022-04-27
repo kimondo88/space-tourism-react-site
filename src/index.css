@@ -131,7 +131,7 @@ input, button, textarea, select{
 .grid{
   display: grid;
   min-height: 100vh;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content 1fr;
 }
 /* select in flow, childs that have siblings before them to make them margin-top */
 .flow > * + * {
@@ -157,6 +157,21 @@ input, button, textarea, select{
   white-space: nowrap;  /* no line breaking */
   border: 0;
 }
+.skip-to-content{
+  display: block;
+  position: absolute;
+  z-index: 300;
+  background: hsl( var(--clr-white));
+  color: hsl( var(--clr-dark));
+  padding: .5em 1em;
+  transform: translateY(-100%);
+  margin-inline: auto;
+  transition: transform 200ms ease-in-out;
+}
+.skip-to-content:focus{
+  transform: translateY(0);
+}
+
 
 /* utlity styles */
 .box-shadow{
@@ -573,12 +588,11 @@ input, button, textarea, select{
   }
   .line{
     position: relative;
-    display: inline-block;
+    display: block;
     margin-top: 2.5rem;
     margin-left: 1em;
     width: 100%;
     max-width: 45vw;
-    height: 0;
   }
   .line > span{
     position: absolute;

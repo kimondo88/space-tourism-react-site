@@ -25,8 +25,9 @@ export default function Homepage() {
             ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
 
-    return (
+    return (    
         <div className="grid">
+            <a className="skip-to-content" href="#main">Skip to Main</a>
             <header className="flex flex-between">
                 <div className="self-center" style={{"flexBasis" : "10%"}}> 
                     <img className="logo" src={logo} alt=""/>
@@ -39,19 +40,17 @@ export default function Homepage() {
                 </div>
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span>00</span>Home</Link></li>
+                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
-                            <span>01</span> Destination</Link></li>
+                            <span aria-hidden="true">01</span> Destination</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
-                            <span>02</span> Crew</Link> </li>
+                            <span aria-hidden="true">02</span> Crew</Link> </li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
-                            <span>03</span> Technology</Link> </li>
+                            <span aria-hidden="true">03</span> Technology</Link> </li>
                     </ul>
                 </nav>
             </header>
-
-           
-            <div className="grid-container">
+            <main id="main" className="grid-container">
                 <div className="flow">
                     <h1 className='txt-light ff-sans-cond uppercase letter-spacing-1'>So, you want to travel to
                     <span style={{"display" : "block" }} className="txt-white ff-serif uppercase letter-spacing-1 fs-900">Space</span></h1>
@@ -62,7 +61,7 @@ export default function Homepage() {
                 <div className="m-button">
                     <Link className="large-button anim bg-white txt-dark ff-serif uppercase" style={{"fontSize" : "2rem"}}to="/">Explore</Link>
                 </div>
-            </div>
+            </main>
         </div>
     )
 }
