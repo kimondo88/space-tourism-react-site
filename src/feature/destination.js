@@ -55,7 +55,7 @@ export default function Destination() {
                     </ul>
                 </nav>
             </header>
-            <main id="main" className="grid-container">
+            <main id="main" className="grid-container" style={{"gridRow" : "2"}}>
                 <div className="flow">
                     <div>
                         <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
@@ -75,6 +75,7 @@ export default function Destination() {
                                 })}
                                 </ul>
                         </nav>
+                        <PlanetText data={celestialData[0]}/>
                     </div>
                 </div>
             </main>
@@ -88,11 +89,18 @@ function PlanetImage(props){
     )
 }
 
-function Planet(props){
+function PlanetText(props){
     
     return(
         <div className="">
-            {props.name}
+            <h1 className="ff-serif fs-900 uppercase">{props.data.name}</h1>
+            <p className="txt-light ff-sans-normal">{props.data.description}</p>
+            <div className="line-destination"><span></span></div>
+            <div className="my-5"></div>
+            <p className='txt-light ff-sans-cond fs-400 letter-spacing-3 uppercase'>Avg. Distance</p>
+            <p className='ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.distance}</p>
+            <p className='txt-light ff-sans-cond fs-400 letter-spacing-3 uppercase my-3'>Est. Travel Time</p>
+            <p className='ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.travel}</p>
         </div>
     )
 }

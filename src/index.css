@@ -133,6 +133,9 @@ input, button, textarea, select{
   min-height: 100vh;
   grid-template-rows: min-content min-content 1fr;
 }
+.block{
+  display: block;
+}
 /* select in flow, childs that have siblings before them to make them margin-top */
 .flow > * + * {
   margin-top: var(--flow-space, 1rem);
@@ -411,6 +414,11 @@ input, button, textarea, select{
 .logo{
   margin-inline: clamp(1.5rem, 6vw, 3.5rem);
 }
+.img-destination{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
 .primary-navigation{
   padding: 0; 
   margin: 0;
@@ -419,8 +427,8 @@ input, button, textarea, select{
 }
 .primary-navigation--destination{
   padding: 0; 
-  margin: 0;
-  --underline-gap: 0.5rem;
+  margin-top: 2rem;
+  --underline-gap: 0.3rem;
   list-style: none;
 }
 .mobile-nav-toggle{
@@ -496,6 +504,24 @@ input, button, textarea, select{
   color: hsl( var(--clr-dark));
   background-color: hsl( var(--clr-white) / 1);
 }
+.line-destination{
+  position: absolute;
+  display: block;
+  margin-top: 2.5rem;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+.line-destination > span{
+  position: absolute;
+  z-index: 100;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background-color: hsl( var(--clr-white) / 1);
+}
+
 
 /* ------------------- */
 /* MEDIA QUERIES       */
