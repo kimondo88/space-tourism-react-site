@@ -20,7 +20,7 @@ root.render(
           
       </Route>
       <Route path="/home" element={<Homepage />}/>
-      <Route path="/destination" element={<Destination />}/>
+      <Route path="/destination/:celestial" element={<Destination />}/>
     </Routes>
   </BrowserRouter>,
   </React.StrictMode>

@@ -638,7 +638,7 @@ input, button, textarea, select{
     background-image: url("/public/assets/home/background-home-desktop.jpg");
   }
   .bg-destination{
-    background-image: url("./assets/destination/background-destination-tablet.jpg");
+    background-image: url("./assets/destination/background-destination-desktop.jpg");
   }
 }
 

@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import logo from "../assets/shared/logo.svg"
 import data from "../data.json";
 
 export default function Destination() {
+    const { celestial } = useParams();
+    const celestialData = data.destinations.filter(item => item["name"] === celestial)
     useEffect(()=>{
         const body = document.querySelector('body');
         if(body.classList.contains('bg-destination')){
@@ -43,7 +46,7 @@ export default function Destination() {
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
@@ -56,17 +59,17 @@ export default function Destination() {
                 <div className="flow">
                     <div>
                         <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
-                        <PlanetImage data={data.destinations[0]} />
+                        <PlanetImage data={celestialData[0]} />
                         <nav>
                             <ul 
                             className="primary-navigation--destination underline-indicator flex flex-center"
                             style={{"paddingRight" : "0", "paddingLeft" : "0"}}>
                                 { data.destinations.map((item ,index) => {
                                     if(index === 0){
-                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
+                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }else{
-                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
+                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }
                                 })}
