@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/shared/logo.svg"
-export default function Homepage() {
+import data from "../data.json";
+const planet = data.destinations[0].images.png;
+const temp = require(planet);
+
+export default function Destination() {
     useEffect(()=>{
         const body = document.querySelector('body');
         if(body.classList.contains('bg-home-d')){
@@ -52,12 +56,42 @@ export default function Homepage() {
             </header>
             <main id="main" className="grid-container">
                 <div className="flow">
-                    <h1 className='numbered-title'><span>01</span>pick your destination</h1>
-                    
+                    <div>
+                        <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
+                        <PlanetImage data={data.destinations[0]} />
+                        <nav>
+                            <ul 
+                            className="primary-navigation--destination underline-indicator flex flex-center"
+                            style={{"paddingRight" : "0", "paddingLeft" : "0"}}>
+                                { data.destinations.map((item ,index) => {
+                                    if(index === 0){
+                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
+                                        {item.name}</Link></li>
+                                    }else{
+                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
+                                        {item.name}</Link></li>
+                                    }
+                                })}
+                                </ul>
+                        </nav>
+                    </div>
                 </div>
-                
             </main>
         </div>
     )
 }
 
+function PlanetImage(props){
+    return (
+        <img src={temp} alt="planet" >xxxx</img>
+    )
+}
+
+function Planet(props){
+    
+    return(
+        <div className="">
+            {props.name}
+        </div>
+    )
+}

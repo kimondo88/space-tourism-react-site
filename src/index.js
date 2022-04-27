@@ -9,7 +9,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './feature/homepage';
-
+import Destination from './feature/destination';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -20,6 +20,7 @@ root.render(
           
       </Route>
       <Route path="/home" element={<Homepage />}/>
+      <Route path="/destination" element={<Destination />}/>
     </Routes>
   </BrowserRouter>,
   </React.StrictMode>
