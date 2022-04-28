@@ -5,6 +5,7 @@ import logo from "../assets/shared/logo.svg"
 import data from "../data.json";
 
 export default function Crew() {
+    // const [imgPath,  setImgPath] = useState('');
     let { member } = useParams();
     const memberData = data.crew.filter(item => {
         let joinString = item["name"];
@@ -12,6 +13,8 @@ export default function Crew() {
         joinString = joinString[0].concat(joinString[1]);
         return joinString === member
     })
+    console.log(memberData);
+
     useEffect(()=>{
         const body = document.querySelector('body');
         if(body.classList.contains('bg-crew')){
@@ -56,8 +59,8 @@ export default function Crew() {
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/Crew/Moon">
-                            <span aria-hidden="true">01</span> Crew</Link></li>
+                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
+                            <span aria-hidden="true">01</span> Destination</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
@@ -69,18 +72,13 @@ export default function Crew() {
             <main id="main" className="grid-container grid-container--Crew">
                 <div className="col-2">
                     <h1 className='numbered-title-300'><span aria-hidden="true">01</span> Pick your Crew</h1>
-                    {console.log(memberData[0])}
                     <CrewImage data={memberData[0]} />
                 </div>
                 <div className="col-3">
                         <nav>
-                            
                         </nav>
                         <CrewText data={memberData[0]}/>
                     </div>
-                   
-                        
-                   
             </main>
         </div>
     )
@@ -88,7 +86,7 @@ export default function Crew() {
 
 function CrewImage(props){
     return (
-        <img className="img-Crew" src={`${props.data.images.png}`} alt="planet"></img>
+        <img className="img-destination" src={props.data.images.png} alt="crew member"></img>
     )
 }
 
@@ -97,9 +95,8 @@ function CrewText(props){
     return(
         <article className="planet-text">
             <h3 className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.role}</h3>
-            <h2 className="ff-serif fs-900 uppercase">{props.data.name}</h2>
+            <h2 className="ff-serif fs-300 uppercase">{props.data.name}</h2>
             <p className="txt-light ff-sans-normal fs-200">{props.data.bio}</p>
-            <h3 className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.bio}</h3>
         </article>
     )
 }

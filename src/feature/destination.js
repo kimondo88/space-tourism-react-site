@@ -53,7 +53,7 @@ export default function Destination() {
                         <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span aria-hidden="true">03</span> Technology</Link> </li>
@@ -100,7 +100,7 @@ export default function Destination() {
 
 function PlanetImage(props){
     return (
-        <img className="img-destination" src={`${props.data.images.png}`} alt="planet"></img>
+        <img className="img-destination" src={`${props.data.images.png}`} alt={props.data.name}></img>
     )
 }
 
