@@ -29,7 +29,12 @@ export default function Destination() {
         change !== "true"
             ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
-
+    const selectActive = (id) => {
+        const active = document.querySelector(".primary-navigation--destination li.active")
+        active.classList.toggle("active")
+        let toActive = document.getElementById(id)
+        toActive.classList.toggle("active")
+    }
     return (    
         <div className="grid">
             <a className="skip-to-content" href="#main">Skip to Main</a>
@@ -68,10 +73,16 @@ export default function Destination() {
                             style={{"paddingRight" : "0", "paddingLeft" : "0"}}>
                                 { data.destinations.map((item ,index) => {
                                     if(index === 0){
-                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " to={'/destination/' + item.name}>
+                                        return <li key={item.name+1} id={item.name+1} className="active">
+                                            <Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
+                                            onClick={() => selectActive(item.name+1)} 
+                                            to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }else{
-                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " to={'/destination/' + item.name}>
+                                        return <li key={item.name+1} id={item.name+1}>
+                                            <Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
+                                            onClick={() => selectActive(item.name+1)} 
+                                            to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }
                                 })}

@@ -595,6 +595,9 @@ input, button, textarea, select{
   .planet-text_bottom div + div{
     margin-top: 2rem;
   }
+  .img-destination{
+    margin-top: 1rem;
+  }
 }
 
 
