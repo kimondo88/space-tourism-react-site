@@ -55,10 +55,10 @@ export default function Destination() {
                     </ul>
                 </nav>
             </header>
-            <main id="main" className="grid-container" style={{"gridRow" : "2"}}>
-                <div className="flow">
-                    <div>
-                        <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
+            
+            <main id="main" className="grid-container grid-container--destination">
+                <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
+                <div className="">
                         <PlanetImage data={celestialData[0]} />
                         <nav>
                             <ul 
@@ -66,17 +66,16 @@ export default function Destination() {
                             style={{"paddingRight" : "0", "paddingLeft" : "0"}}>
                                 { data.destinations.map((item ,index) => {
                                     if(index === 0){
-                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to={'/destination/' + item.name}>
+                                        return <li key={item.name+1} className="active"><Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }else{
-                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to={'/destination/' + item.name}>
+                                        return <li key={item.name+1}><Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " to={'/destination/' + item.name}>
                                         {item.name}</Link></li>
                                     }
                                 })}
                                 </ul>
                         </nav>
                         <PlanetText data={celestialData[0]}/>
-                    </div>
                 </div>
             </main>
         </div>
@@ -92,15 +91,21 @@ function PlanetImage(props){
 function PlanetText(props){
     
     return(
-        <div className="">
+        <div className="planet-text">
             <h1 className="ff-serif fs-900 uppercase">{props.data.name}</h1>
-            <p className="txt-light ff-sans-normal">{props.data.description}</p>
+            <p className="txt-light ff-sans-normal fs-200" style={{"margin" : "0 auto"}}>{props.data.description}</p>
             <div className="line-destination"><span></span></div>
             <div className="my-5"></div>
-            <p className='txt-light ff-sans-cond fs-400 letter-spacing-3 uppercase'>Avg. Distance</p>
-            <p className='ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.distance}</p>
-            <p className='txt-light ff-sans-cond fs-400 letter-spacing-3 uppercase my-3'>Est. Travel Time</p>
-            <p className='ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.travel}</p>
+            <div className="planet-text_bottom">
+                <div className="">
+                    <p className='txt-light ff-sans-cond letter-spacing-3 uppercase' style={{"fontSize" : ".875rem"}}>Avg. Distance</p>
+                    <p className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.distance}</p>
+                </div>
+                <div className="">
+                    <p className='txt-light ff-sans-cond letter-spacing-3 uppercase' style={{"fontSize" : ".875rem"}}>Est. Travel Time</p>
+                    <p className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.travel}</p>
+                </div>
+            </div>
         </div>
     )
 }

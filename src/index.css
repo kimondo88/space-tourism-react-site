@@ -20,7 +20,7 @@ html{
   --clr-white: 0 0% 100%;
 
   /*  font-sizes */
-  --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
+  --fs-900: clamp(6rem, 7vw + 2rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
@@ -43,11 +43,12 @@ html{
 
 @media (min-width: 600px){
   html{
-    --fs-900: 9.375rem;
+    --fs-900: 6.375rem;
     --fs-800: 5rem;
     --fs-700: 2.5rem;
-    --fs-600: 1.5rem;
+    --fs-600: 1.75rem;
     --fs-400: 1rem;
+    --fs-300: .875rem;
   }
 }
 
@@ -149,6 +150,10 @@ input, button, textarea, select{
   grid-row: 3;
   display: grid;
   margin-inline: auto;
+}
+.grid-container--destination{
+  margin-top: 3rem;
+  grid-row: 2;
 }
 .sr-only{
   position: absolute;
@@ -335,7 +340,8 @@ input, button, textarea, select{
   row-gap: max(1em, 5vh);
   padding-bottom: max(2em, 10vh);
 }
-.grid-container > * {
+.grid-container p {
+  line-height: 1.8;
   max-width: 46ch;
 }
 .grid-container > * > p {
@@ -364,12 +370,14 @@ input, button, textarea, select{
   letter-spacing: 4.75px;
 }
 .numbered-title-300{
-  margin-bottom: var(--title-space, 1rem);
+  display: block;
+  position: relative;
+  margin: 0 auto;
   color: white;
   text-transform: uppercase;
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-300);
-  letter-spacing: 2.7px;
+  letter-spacing: 2.35px;
 }
 .numbered-title span, .numbered-title-300 span{
   color: hsl( var(--clr-white) / .25);
@@ -521,8 +529,12 @@ input, button, textarea, select{
   margin: 0 auto;
   background-color: hsl( var(--clr-white) / 1);
 }
-
-
+.planet-text{
+  display: block;
+}
+.planet-text_bottom p{
+  margin: 0 auto;
+}
 /* ------------------- */
 /* MEDIA QUERIES       */
 /* ------------------- */
@@ -577,16 +589,31 @@ input, button, textarea, select{
     outline: 5px solid white;
     outline-offset: 4px;
   }
+  .planet-text_bottom div + div{
+    margin-top: 2rem;
+  }
 }
 
 
 
 @media (min-width: 600px){
   .grid-container{
-    padding-top: max(1em, 3em)
+    padding-top: max(1em, 3em);
+  }
+  .grid-container p{
+    max-width: 65ch;
   }
   .grid-container > * > p {
     padding-inline: 0;
+  }
+  .grid-container--destination{
+    margin-top: 2rem;
+  }
+  .numbered-title-300{
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    text-align: left;
   }
   .primary-navigation{
     display: flex;
@@ -599,6 +626,14 @@ input, button, textarea, select{
     --gap: 0.2rem;
     --underline-gap: 1rem;
   }
+  .primary-navigation--destination{
+    --gap: 0.4rem;
+  }
+  .planet-text_bottom{
+    display: flex;
+    justify-content: space-around;
+  }
+
   .bg-home-d{
     background-image: url("/public/assets/home/background-home-tablet.jpg");
   }
