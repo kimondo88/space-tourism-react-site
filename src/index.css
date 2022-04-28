@@ -215,6 +215,9 @@ input, button, textarea, select{
   border: 1px solid hsl(var(--clr-light) / .4); 
   text-align: left
 }
+.wh-nowrap{
+  white-space: nowrap;
+}
 /* backgrounds images */
 .bg-home-d{
   background-image: url("../public/assets/home/background-home-mobile.jpg");

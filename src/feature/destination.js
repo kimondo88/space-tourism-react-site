@@ -63,7 +63,7 @@ export default function Destination() {
             
             <main id="main" className="grid-container grid-container--destination">
                 <div className="col-2">
-                    <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
+                    <h1 className='numbered-title-300'><span aria-hidden="true">01</span> Pick your destination</h1>
                     <PlanetImage data={celestialData[0]} />
                 </div>
                 <div className="col-3">
@@ -107,21 +107,21 @@ function PlanetImage(props){
 function PlanetText(props){
     
     return(
-        <div className="planet-text">
-            <h1 className="ff-serif fs-900 uppercase">{props.data.name}</h1>
+        <article className="planet-text">
+            <h2 className="ff-serif fs-900 uppercase">{props.data.name}</h2>
             <p className="txt-light ff-sans-normal fs-200">{props.data.description}</p>
             <div className="line-destination"><span></span></div>
             <div className="my-5"></div>
             <div className="planet-text_bottom">
-                <div className="">
+                <div className="wh-nowrap">
                     <p className='txt-light ff-sans-cond letter-spacing-3 uppercase' style={{"fontSize" : ".875rem"}}>Avg. Distance</p>
-                    <p className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.distance}</p>
+                    <h3 className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.distance}</h3>
                 </div>
-                <div className="">
+                <div className="wh-nowrap">
                     <p className='txt-light ff-sans-cond letter-spacing-3 uppercase' style={{"fontSize" : ".875rem"}}>Est. Travel Time</p>
-                    <p className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.travel}</p>
+                    <h3 className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.travel}</h3>
                 </div>
             </div>
-        </div>
+        </article>
     )
 }
