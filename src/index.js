@@ -10,6 +10,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './feature/homepage';
 import Destination from './feature/destination';
+import Crew from './feature/crew';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ root.render(
       </Route>
       <Route path="/home" element={<Homepage />}/>
       <Route path="/destination/:celestial" element={<Destination />}/>
+      <Route path="/crew/:member" element={<Crew />}/>
     </Routes>
   </BrowserRouter>,
   </React.StrictMode>

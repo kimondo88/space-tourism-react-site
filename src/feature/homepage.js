@@ -43,7 +43,7 @@ export default function Homepage() {
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span aria-hidden="true">03</span> Technology</Link> </li>
