@@ -532,6 +532,9 @@ input, button, textarea, select{
 .planet-text{
   display: block;
 }
+.planet-text > p{
+  margin: 0 auto;
+}
 .planet-text_bottom p{
   margin: 0 auto;
 }
@@ -609,12 +612,6 @@ input, button, textarea, select{
   .grid-container--destination{
     margin-top: 2rem;
   }
-  .numbered-title-300{
-    position: absolute;
-    top: 10%;
-    left: 4%;
-    text-align: left;
-  }
   .primary-navigation{
     display: flex;
     position: relative;
@@ -643,6 +640,12 @@ input, button, textarea, select{
 }
 
 @media (max-width: 899px) and (min-width: 600px){
+  .numbered-title-300{
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    text-align: left;
+  }
   .primary-navigation > * > a span{
     display: none;
   }
@@ -669,6 +672,21 @@ input, button, textarea, select{
     grid-column: 3;
     place-content: flex-end;
   }
+  .grid-container--destination{
+    margin-top: 6rem;
+    column-gap: clamp(2rem, 10vw, 10rem);
+  }
+  .col-2{
+    grid-column: 2;
+    place-content: center;
+  }
+  .col-3{
+    grid-column: 3;
+  }
+  .numbered-title-300{
+    display: absolute;
+    margin-bottom: 5rem;
+  }
   .line{
     position: relative;
     display: block;
@@ -686,14 +704,32 @@ input, button, textarea, select{
     height: 1px;
     background-color: hsl( var(--clr-white) / .25);
   }
+  .line-destination{
+    position: relative;
+    inset: 0;
+    width: 100%;
+  }
   .primary-navigation{
     padding-right: clamp(5rem, 15vw, 16rem);
     padding-left: 5em;
     --gap: 0.5rem;
     --underline-gap: 1.5rem;
   }
+  .primary-navigation--destination{
+    place-content: start;
+  }
+  .planet-text > p{
+    margin: 0;
+  }
+  .planet-text_bottom{
+    justify-content: start;
+    gap: 4rem;
+  }
   .m-button{
     justify-self: end;
+  }
+  .img-destination{
+    width: 100%;
   }
   .bg-home-d{
     background-image: url("/public/assets/home/background-home-desktop.jpg");

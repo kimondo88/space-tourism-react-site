@@ -45,8 +45,8 @@ export default function Destination() {
                 </div>
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
+                        <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
+                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
@@ -57,9 +57,11 @@ export default function Destination() {
             </header>
             
             <main id="main" className="grid-container grid-container--destination">
-                <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
-                <div className="">
-                        <PlanetImage data={celestialData[0]} />
+                <div className="col-2">
+                    <h1 className='numbered-title-300'><span>01</span> Pick your destination</h1>
+                    <PlanetImage data={celestialData[0]} />
+                </div>
+                <div className="col-3">
                         <nav>
                             <ul 
                             className="primary-navigation--destination underline-indicator flex flex-center"
@@ -76,7 +78,10 @@ export default function Destination() {
                                 </ul>
                         </nav>
                         <PlanetText data={celestialData[0]}/>
-                </div>
+                    </div>
+                   
+                        
+                   
             </main>
         </div>
     )
@@ -93,7 +98,7 @@ function PlanetText(props){
     return(
         <div className="planet-text">
             <h1 className="ff-serif fs-900 uppercase">{props.data.name}</h1>
-            <p className="txt-light ff-sans-normal fs-200" style={{"margin" : "0 auto"}}>{props.data.description}</p>
+            <p className="txt-light ff-sans-normal fs-200">{props.data.description}</p>
             <div className="line-destination"><span></span></div>
             <div className="my-5"></div>
             <div className="planet-text_bottom">
