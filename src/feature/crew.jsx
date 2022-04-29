@@ -13,8 +13,12 @@ export default function Crew() {
         joinString = joinString[0].concat(joinString[1]);
         return joinString === member
     })
-    console.log(memberData);
-
+    const memberMap = data.crew.map(item => {
+        let joinString = item["name"];
+        joinString = joinString.toLowerCase().split(" ");
+        joinString = joinString[0].concat(joinString[1]);
+        return joinString
+    })
     useEffect(()=>{
         const body = document.querySelector('body');
         if(body.classList.contains('bg-crew')){
@@ -38,10 +42,15 @@ export default function Crew() {
             ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
     const selectActive = (id) => {
-        const active = document.querySelector(".primary-navigation--Crew li.active")
-        active.classList.toggle("active")
-        let toActive = document.getElementById(id)
-        toActive.classList.toggle("active")
+        const active = document.querySelectorAll(".dot-indicators a");
+        const setActive = document.getElementById(id);
+        active.forEach((item) =>{
+            let bool  = item.getAttribute('aria-pressed')
+            if(bool === "true"){
+                return item.setAttribute('aria-pressed', "false");
+            }
+        })
+        return setActive.setAttribute('aria-pressed', "true");
     }
     return (    
         <div className="grid">
@@ -61,21 +70,49 @@ export default function Crew() {
                         <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/"><span aria-hidden="true">00</span>Home</Link></li>
                         <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/technology/">
                             <span aria-hidden="true">03</span> Technology</Link> </li>
                     </ul>
                 </nav>
             </header>
             
-            <main id="main" className="grid-container grid-container--Crew">
-                <div className="col-2">
-                    <h1 className='numbered-title-300'><span aria-hidden="true">01</span> Pick your Crew</h1>
+            <main id="main" className="grid-container grid-container--crew">
+                <div className="col-2 border-b">
+                    <h1 className='numbered-title-300' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your Crew</h1>
                     <CrewImage data={memberData[0]} />
                 </div>
-                <div className="col-3">
+                <div className="col-3 grid-container--crew">
                         <nav>
+                            <div className="flex flex-col pyb-1h">
+                                <div className="flex flex flex-cc dot-indicators" aria-required>
+                                    <Link id={memberMap[0]} 
+                                    aria-pressed="true" 
+                                    to={'/crew/' + memberMap[0]} 
+                                    onClick={() => selectActive(memberMap[0])}/>                                        
+                                    <span className='sr-only'>
+                                        Slide title</span>
+                                    <Link id={memberMap[1]} 
+                                    aria-pressed="false"
+                                     to={'/crew/' + memberMap[1]}
+                                     onClick={() => selectActive(memberMap[1])}/>
+                                     <span className='sr-only'>
+                                        Slide title</span>
+                                    <Link id={memberMap[2]} 
+                                    aria-pressed="false"
+                                     to={'/crew/' + memberMap[2]}
+                                     onClick={() => selectActive(memberMap[2])}/>
+                                     <span className='sr-only'>
+                                        Slide title</span>
+                                    <Link id={memberMap[3]} 
+                                    aria-pressed="false"
+                                     to={'/crew/' + memberMap[3]}
+                                     onClick={() => selectActive(memberMap[3])}/>
+                                     <span className='sr-only'>
+                                        Slide title</span>
+                                </div>
+                            </div>
                         </nav>
                         <CrewText data={memberData[0]}/>
                     </div>
@@ -86,17 +123,21 @@ export default function Crew() {
 
 function CrewImage(props){
     return (
-        <img className="img-destination" src={props.data.images.png} alt="crew member"></img>
+        <img className="img-crew" 
+        src={props.data.images.png} 
+        alt="crew member" 
+        style={{"paddingTop" : "1rem"}}></img>
     )
 }
 
 function CrewText(props){
     
     return(
-        <article className="planet-text">
-            <h3 className='ff-serif letter-spacing-3 uppercase my-1' style={{"fontSize" : "1.75rem"}}>{props.data.role}</h3>
-            <h2 className="ff-serif fs-300 uppercase">{props.data.name}</h2>
-            <p className="txt-light ff-sans-normal fs-200">{props.data.bio}</p>
+        <article className="planet-text--crew flow">
+            <h3 className='txt-light ff-serif fs-400 letter-spacing-3 uppercase my-1' 
+            style={{"opacity" : ".5"}}>{props.data.role}</h3>
+            <h2 className="ff-serif fs-500 uppercase">{props.data.name}</h2>
+            <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "1rem"}}>{props.data.bio}</p>
         </article>
     )
 }

@@ -210,6 +210,9 @@ input, button, textarea, select{
 .my-7{
   margin-top: 7rem;
 }
+.border-b{
+  border-bottom: var(--border, 2px) solid hsl( var(--clr-white) / .1)
+}
 .colors__divs{
   padding: 3rem 10rem 1rem 1rem;
   border: 1px solid hsl(var(--clr-light) / .4); 
@@ -430,6 +433,11 @@ input, button, textarea, select{
   display: block;
   margin: 0 auto;
 }
+.img-crew{
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
 .primary-navigation{
   padding: 0; 
   margin: 0;
@@ -535,7 +543,7 @@ input, button, textarea, select{
 .planet-text{
   display: block;
 }
-.planet-text > p{
+.planet-text > p, .planet-text--crew > p{
   margin: 0 auto;
 }
 .planet-text_bottom p{
@@ -618,6 +626,26 @@ input, button, textarea, select{
   .grid-container--destination{
     margin-top: 2rem;
   }
+  .grid-container--crew{
+    display: grid;
+    grid-template-areas: 
+      'content'
+      'nav';
+    padding-bottom: 0;
+  }
+  .grid-container--crew .col-2{
+    grid-row: 3;
+    border-bottom: 0;
+  }
+  .grid-container--crew .col-3{
+    grid-row: 2;
+  }
+  .grid-container--crew nav{
+    grid-area: nav;
+  }
+  .grid-container--crew article{
+    grid-area: content;
+  }
   .primary-navigation{
     display: flex;
     position: relative;
@@ -632,11 +660,19 @@ input, button, textarea, select{
   .primary-navigation--destination{
     --gap: 0.4rem;
   }
+  .dot-indicators > *{
+    padding: .3rem;
+  }
+  .planet-text--crew > p{
+    max-width: 55ch;
+  }
   .planet-text_bottom{
     display: flex;
     justify-content: space-around;
   }
-
+  .img-crew{
+    width: 70%;
+  }
   .bg-home-d{
     background-image: url("/public/assets/home/background-home-tablet.jpg");
   }
