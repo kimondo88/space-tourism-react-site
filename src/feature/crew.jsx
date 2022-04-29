@@ -79,8 +79,8 @@ export default function Crew() {
             </header>
             
             <main id="main" className="grid-container grid-container--crew">
+                <h1 className='numbered-title-300 numbered-title-300--crew' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your Crew</h1>
                 <div className="col-2 border-b">
-                    <h1 className='numbered-title-300' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your Crew</h1>
                     <CrewImage data={memberData[0]} />
                 </div>
                 <div className="col-3 grid-container--crew">
