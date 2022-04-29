@@ -92,25 +92,25 @@ export default function Crew() {
                                     to={'/crew/' + memberMap[0]} 
                                     onClick={() => selectActive(memberMap[0])}/>                                        
                                     <span className='sr-only'>
-                                        Slide title</span>
+                                        Slide Crew Member One</span>
                                     <Link id={memberMap[1]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[1]}
                                      onClick={() => selectActive(memberMap[1])}/>
                                      <span className='sr-only'>
-                                        Slide title</span>
+                                        Slide Crew Member Two</span>
                                     <Link id={memberMap[2]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[2]}
                                      onClick={() => selectActive(memberMap[2])}/>
                                      <span className='sr-only'>
-                                        Slide title</span>
+                                        Slide Crew Member Three</span>
                                     <Link id={memberMap[3]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[3]}
                                      onClick={() => selectActive(memberMap[3])}/>
                                      <span className='sr-only'>
-                                        Slide title</span>
+                                        Slide Crew Member Four</span>
                                 </div>
                             </div>
                         </nav>
