@@ -657,7 +657,6 @@ input, button, textarea, select{
     position: relative;
     flex-direction: row;
     inset: unset;
-    padding-block: 0.2rem;
     padding-inline: 3rem;
     flex-basis: 30%;
     --gap: 0.2rem;
