@@ -92,25 +92,25 @@ export default function Crew() {
                                     to={'/crew/' + memberMap[0]} 
                                     onClick={() => selectActive(memberMap[0])}/>                                        
                                     <span className='sr-only'>
-                                        Slide Crew Member One</span>
+                                        The Commander</span>
                                     <Link id={memberMap[1]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[1]}
                                      onClick={() => selectActive(memberMap[1])}/>
                                      <span className='sr-only'>
-                                        Slide Crew Member Two</span>
+                                        The Mission Specialist</span>
                                     <Link id={memberMap[2]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[2]}
                                      onClick={() => selectActive(memberMap[2])}/>
                                      <span className='sr-only'>
-                                        Slide Crew Member Three</span>
+                                        Pilot</span>
                                     <Link id={memberMap[3]} 
                                     aria-pressed="false"
                                      to={'/crew/' + memberMap[3]}
                                      onClick={() => selectActive(memberMap[3])}/>
                                      <span className='sr-only'>
-                                        Slide Crew Member Four</span>
+                                        Flight Engineer</span>
                                 </div>
                             </div>
                         </nav>
@@ -134,9 +134,9 @@ function CrewText(props){
     
     return(
         <article className="planet-text--crew flow">
-            <h3 className='txt-light ff-serif fs-400 letter-spacing-3 uppercase my-1' 
+            <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1' 
             style={{"opacity" : ".5"}}>{props.data.role}</h3>
-            <h2 className="ff-serif fs-500 uppercase">{props.data.name}</h2>
+            <h2 className="ff-serif fs-700 uppercase">{props.data.name}</h2>
             <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "1rem"}}>{props.data.bio}</p>
         </article>
     )
