@@ -134,9 +134,11 @@ function CrewText(props){
     
     return(
         <article className="planet-text--crew flow">
-            <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1' 
+        <header className="flow">
+            <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1'
             style={{"opacity" : ".5"}}>{props.data.role}</h3>
-            <h2 className="ff-serif fs-700 uppercase">{props.data.name}</h2>
+            <p className="ff-serif fs-700 uppercase lh-11">{props.data.name}</p>
+        </header>
             <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "1rem"}}>{props.data.bio}</p>
         </article>
     )
