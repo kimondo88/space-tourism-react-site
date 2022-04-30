@@ -100,7 +100,10 @@ export default function Destination() {
 
 function PlanetImage(props){
     return (
-        <img className="img-destination" src={`${props.data.images.png}`} alt={props.data.name}></img>
+        <picture>
+            <source className="img-destination" srcSet={`${props.data.images.webp}`} type="image/webp"/>
+            <img className="img-destination" src={`${props.data.images.png}`} alt={props.data.name}></img>
+        </picture>
     )
 }
 

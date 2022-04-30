@@ -123,23 +123,28 @@ export default function Crew() {
 
 function CrewImage(props){
     return (
-        <img className="img-crew" 
-        src={props.data.images.png} 
-        alt="crew member" 
-        style={{"paddingTop" : "1rem"}}></img>
+        <picture>
+            <source className="img-crew" srcSet={props.data.images.webp}
+            type="image/webp"/>
+            <img className="img-crew" 
+                src={props.data.images.png} 
+                alt="crew member" 
+                style={{"paddingTop" : "1rem"}}/>
+        </picture>
+        
     )
 }
 
 function CrewText(props){
     
     return(
-        <article className="planet-text--crew flow">
-        <header className="flow">
-            <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1'
-            style={{"opacity" : ".5"}}>{props.data.role}</h3>
-            <p className="ff-serif fs-700 uppercase lh-11">{props.data.name}</p>
-        </header>
-            <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "1rem"}}>{props.data.bio}</p>
+        <article className="planet-text--crew">
+            <header className="flow">
+                <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1'
+                style={{"opacity" : ".5"}}>{props.data.role}</h3>
+                <p className="ff-serif fs-700 uppercase lh-11">{props.data.name}</p>
+            </header>
+            <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "2rem"}}>{props.data.bio}</p>
         </article>
     )
 }
