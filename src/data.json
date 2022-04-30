@@ -39,6 +39,16 @@
       "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
       "distance": "1.6 bil. km",
       "travel": "7 years"
+    },
+    {
+      "name": "Tethys",
+      "images": {
+        "png": "/assets/destination/image-tethys.png",
+        "webp": "/assets/destination/image-tethys.webp"
+      },
+      "description": "Tethys is the 16th-largest moon in the Solar System, with a radius of 531 km. The surface of Tethys is one of the most reflective (at visual wavelengths) in the Solar System, with a visual albedo of 1.229.",
+      "distance": "1.272 bil. km",
+      "travel": "8 years"
     }
   ],
   "crew": [
