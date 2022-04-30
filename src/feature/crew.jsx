@@ -68,9 +68,9 @@ export default function Crew() {
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
                         <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/home"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
+                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
                             <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
+                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
                             <span aria-hidden="true">02</span> Crew</Link> </li>
                         <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/technology/">
                             <span aria-hidden="true">03</span> Technology</Link> </li>
