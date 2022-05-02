@@ -30,20 +30,19 @@ export default function Destination() {
 
 
     function tabEvent(e, tabs){
-        console.log("once");
         const [keyCodeLeft, keyCodeRight] = [37,39];
         if(e.keyCode === keyCodeLeft || e.keyCode === keyCodeRight){
             tabs[tabIndex].setAttribute('tabIndex' , '-1'); 
         }
         if(e.keyCode === keyCodeRight){
             tabIndex === tabs.length-1 ? tabIndex = 0 : tabIndex += 1;
-            console.log(tabIndex);
         }
         else if(e.keyCode === keyCodeLeft){
             tabIndex === 0 ? tabIndex = tabs.length-1 : tabIndex -= 1;
-            console.log(tabIndex);
         }
         tabs[tabIndex].setAttribute('tabIndex' , '0');
+        // deselectActive();
+        // tabs[tabIndex].parentElement.classList.toggle("active");
         return tabs[tabIndex].focus();
     }
     const menu = () => {
@@ -57,10 +56,13 @@ export default function Destination() {
             ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
     const selectActive = (id) => {
-        const active = document.querySelector(".primary-navigation--destination li.active")
-        active.classList.toggle("active")
+        deselectActive();
         let toActive = document.getElementById(id)
         toActive.classList.toggle("active")
+    }
+    const deselectActive = () => {
+        const active = document.querySelector(".primary-navigation--destination li.active");
+        return active.classList.toggle("active");
     }
     return (    
         <div className="grid">
@@ -77,13 +79,13 @@ export default function Destination() {
                 </div>
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
-                        <li ><Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/home"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/destination/Moon">
-                            <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley">
-                            <span aria-hidden="true">02</span> Crew</Link> </li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/">
-                            <span aria-hidden="true">03</span> Technology</Link> </li>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/home"><li><span aria-hidden="true">00</span>Home</li></Link>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/destination/Moon"><li className="active">
+                            <span aria-hidden="true">01</span> Destination</li></Link>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li>
+                            <span aria-hidden="true">02</span> Crew</li></Link> 
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li>
+                            <span aria-hidden="true">03</span> Technology</li></Link> 
                     </ul>
                 </nav>
             </header>
@@ -101,21 +103,19 @@ export default function Destination() {
                             role="tablist">
                                 { data.destinations.map((item ,index) => {
                                     if(index === 0){
-                                        return <li key={item.name+1} id={item.name+1} className="active">
-                                            <Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
+                                        return <Link key={item.name+1} className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
                                             onClick={() => selectActive(item.name+1)} 
                                             to={'/destination/' + item.name}
                                             role="tab"
                                             tabIndex="0">
-                                        {item.name}</Link></li>
+                                        <li  id={item.name+1} className="active">{item.name}</li></Link>
                                     }else{
-                                        return <li key={item.name+1} id={item.name+1}>
-                                            <Link className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
+                                        return  <Link key={item.name+1} className="txt-white ff-serif fs-200 letter-spacing-3 uppercase " 
                                             onClick={() => selectActive(item.name+1)} 
                                             to={'/destination/' + item.name}
                                             role="tab"
-                                            tabIndex="-1">
-                                        {item.name}</Link></li>
+                                            tabIndex="-1"><li id={item.name+1}>
+                                        {item.name}</li></Link>
                                     }
                                 })}
                                 </ul>

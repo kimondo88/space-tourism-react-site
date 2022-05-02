@@ -67,13 +67,13 @@ export default function Crew() {
                 </div>
                 <nav id="primary-navigation" className="flex flex-end">
                     <ul className="primary-navigation underline-indicator flex bg-dark--alpha " data-visible="false">
-                        <li ><Link className="txt-white ff-sans-cond letter-spacing-2" to="/home"><span aria-hidden="true">00</span>Home</Link></li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/destination/Moon">
-                            <span aria-hidden="true">01</span> Destination</Link></li>
-                        <li className="active"><Link className="txt-white ff-sans-cond letter-spacing-2" to="/crew/douglashurley">
-                            <span aria-hidden="true">02</span> Crew</Link> </li>
-                        <li><Link className="txt-white ff-sans-cond letter-spacing-2" to="/technology/">
-                            <span aria-hidden="true">03</span> Technology</Link> </li>
+                    <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/home"><li><span aria-hidden="true">00</span>Home</li></Link>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/destination/Moon"><li>
+                            <span aria-hidden="true">01</span> Destination</li></Link>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li className="active">
+                            <span aria-hidden="true">02</span> Crew</li></Link> 
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li>
+                            <span aria-hidden="true">03</span> Technology</li></Link> 
                     </ul>
                 </nav>
             </header>

@@ -465,23 +465,24 @@ input, button, textarea, select{
   white-space: nowrap;
   font-size: var(--fs-200);
 }
-.primary-navigation a > span{
+.primary-navigation li > span{
   font-weight: 700;
   margin-right: 0.4rem;
 }
-.underline-indicator > * {
+.underline-indicator > * > * {
   cursor: pointer;
   border: 0;
   padding: var(--underline-gap, 1.5rem);
   border-bottom: 2px solid hsl( var(--clr-white) / var(--alpha, 0));
 }
 
-.underline-indicator > *:hover, 
-.underline-indicator > *:focus{
+.underline-indicator > * > *:hover, 
+.underline-indicator > * > *:focus,
+.underline-indicator > * > *:focus{
   border-color: hsl( var(--clr-white) / .5)
 }
 
-.underline-indicator > .active, 
+.underline-indicator > * > .active, 
 .underline-indicator > [aria-pressed="true"]{
   color: hsl( var(--clr-white) / 1);
   border-color: hsl( var(--clr-white) / 1)
@@ -539,7 +540,7 @@ input, button, textarea, select{
 }
 .line-destination > span{
   position: absolute;
-  z-index: 100;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 2px;
@@ -696,7 +697,7 @@ input, button, textarea, select{
     left: 4%;
     text-align: left;
   }
-  .primary-navigation > * > a span{
+  .primary-navigation > * > li span{
     display: none;
   }
 }
