@@ -481,7 +481,10 @@ input, button, textarea, select{
 .underline-indicator > * > *:focus{
   border-color: hsl( var(--clr-white) / .5)
 }
-
+.underline-indicator > *:focus{
+  border-bottom: 2px solid;
+  border-color: hsl( var(--clr-white) / .5)
+}
 .underline-indicator > * > .active, 
 .underline-indicator > [aria-pressed="true"]{
   color: hsl( var(--clr-white) / 1);
