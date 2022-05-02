@@ -38,13 +38,13 @@ export default function Destination() {
         if(e.keyCode === keyCodeRight){
             tabIndex === tabs.length-1 ? tabIndex = 0 : tabIndex += 1;
             console.log(tabIndex);
-            return tabs[tabIndex].setAttribute('tabIndex' , '0');
         }
         else if(e.keyCode === keyCodeLeft){
             tabIndex === 0 ? tabIndex = tabs.length-1 : tabIndex -= 1;
             console.log(tabIndex);
-            return tabs[tabIndex].setAttribute('tabIndex' , '0');
         }
+        tabs[tabIndex].setAttribute('tabIndex' , '0');
+        return tabs[tabIndex].focus();
     }
     const menu = () => {
         const button = document.querySelector('.mobile-nav-toggle');
