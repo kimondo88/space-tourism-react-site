@@ -19,6 +19,8 @@ export default function Crew() {
         joinString = joinString[0].concat(joinString[1]);
         return joinString
     })
+    let tabIndex = 0;
+
     useEffect(()=>{
         const body = document.querySelector('body');
         if(body.classList.contains('bg-crew')){
@@ -30,7 +32,29 @@ export default function Crew() {
             body.classList.toggle('bg-crew');
         }
     },[])
+    useEffect(()=>{
+        const tabList = document.querySelector('[role="tablist"]');
+        const tabs = tabList.querySelectorAll('[role="tab"]');
 
+        const list = tabList.addEventListener("keydown" , (e) => tabEvent(e, tabs));
+        return () => tabList.removeEventListener("keydown", list);
+        // eslint-disable-next-line
+    },[])
+
+    function tabEvent(e, tabs){
+        const [keyCodeLeft, keyCodeRight] = [37,39];
+        if(e.keyCode === keyCodeLeft || e.keyCode === keyCodeRight){
+            tabs[tabIndex].setAttribute('tabIndex' , '-1'); 
+            if(e.keyCode === keyCodeRight){
+                tabIndex === tabs.length-1 ? tabIndex = 0 : tabIndex += 1;
+            }
+            else if(e.keyCode === keyCodeLeft){
+                tabIndex === 0 ? tabIndex = tabs.length-1 : tabIndex -= 1;
+            }
+            tabs[tabIndex].setAttribute('tabIndex' , '0');
+            return tabs[tabIndex].focus();
+        }
+    }
     const menu = () => {
         const button = document.querySelector('.mobile-nav-toggle');
         let change = button.getAttribute('aria-expanded');
@@ -42,15 +66,11 @@ export default function Crew() {
             ? element.setAttribute('data-visible', "true") : element.setAttribute('data-visible', "false")
     }
     const selectActive = (id) => {
-        const active = document.querySelectorAll(".dot-indicators a");
+        // const active = document.querySelectorAll(".dot-indicators a");
+        const active = document.querySelector('[aria-selected="true"]')
         const setActive = document.getElementById(id);
-        active.forEach((item) =>{
-            let bool  = item.getAttribute('aria-pressed')
-            if(bool === "true"){
-                return item.setAttribute('aria-pressed', "false");
-            }
-        })
-        return setActive.setAttribute('aria-pressed', "true");
+        active.setAttribute('aria-selected', false);
+        return setActive.setAttribute('aria-selected', true);
     }
     return (    
         <div className="grid">
@@ -86,27 +106,35 @@ export default function Crew() {
                 <div className="col-3 grid-container--crew">
                         <nav>
                             <div className="flex flex-col pyb-1h">
-                                <div className="flex flex flex-cc dot-indicators" aria-required>
+                                <div className="flex flex flex-cc dot-indicators" role="tablist" >
                                     <Link id={memberMap[0]} 
-                                    aria-pressed="true" 
+                                    aria-selected="true"
+                                    role="tab"
+                                    tabIndex="0" 
                                     to={'/crew/' + memberMap[0]} 
                                     onClick={() => selectActive(memberMap[0])}/>                                        
                                     <span className='sr-only'>
                                         The Commander</span>
                                     <Link id={memberMap[1]} 
-                                    aria-pressed="false"
+                                    aria-selected="false"
+                                    role="tab"
+                                    tabIndex="-1" 
                                      to={'/crew/' + memberMap[1]}
                                      onClick={() => selectActive(memberMap[1])}/>
                                      <span className='sr-only'>
                                         The Mission Specialist</span>
                                     <Link id={memberMap[2]} 
-                                    aria-pressed="false"
+                                    aria-selected="false"
+                                    role="tab"
+                                    tabIndex="-1" 
                                      to={'/crew/' + memberMap[2]}
                                      onClick={() => selectActive(memberMap[2])}/>
                                      <span className='sr-only'>
                                         Pilot</span>
                                     <Link id={memberMap[3]} 
-                                    aria-pressed="false"
+                                    aria-selected="false"
+                                    role="tab"
+                                    tabIndex="-1" 
                                      to={'/crew/' + memberMap[3]}
                                      onClick={() => selectActive(memberMap[3])}/>
                                      <span className='sr-only'>

@@ -508,7 +508,7 @@ input, button, textarea, select{
   background-color: hsl( var(--clr-white) / .5)
 }
 
-.dot-indicators > [aria-pressed="true"]{
+.dot-indicators > [aria-selected="true"]{
   background-color: hsl( var(--clr-white) / 1)
 }
 
