@@ -26,8 +26,8 @@ export default function Destination() {
 
         const list = tabList.addEventListener("keydown" , (e) => tabEvent(e, tabs));
         return () => tabList.removeEventListener("keydown", list);
+        // eslint-disable-next-line
     },[])
-
 
     function tabEvent(e, tabs){
         const [keyCodeLeft, keyCodeRight] = [37,39];
@@ -41,8 +41,6 @@ export default function Destination() {
             tabIndex === 0 ? tabIndex = tabs.length-1 : tabIndex -= 1;
         }
         tabs[tabIndex].setAttribute('tabIndex' , '0');
-        // deselectActive();
-        // tabs[tabIndex].parentElement.classList.toggle("active");
         return tabs[tabIndex].focus();
     }
     const menu = () => {
@@ -58,7 +56,7 @@ export default function Destination() {
     const selectActive = (id) => {
         deselectActive();
         let toActive = document.getElementById(id)
-        toActive.classList.toggle("active")
+        return toActive.classList.toggle("active")
     }
     const deselectActive = () => {
         const active = document.querySelector(".primary-navigation--destination li.active");
