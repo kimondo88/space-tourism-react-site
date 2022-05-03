@@ -1,5 +1,7 @@
 import './App.css';
 import { Link } from 'react-router-dom'
+import logo from "./assets/shared/logo.svg"
+
 function App() {
   return (
     <div className="App">
@@ -7,11 +9,14 @@ function App() {
         
       </header>
       <div className="container">
-            <h1 className="ff-serif uppercase">Design system</h1>
-            <Colors />
-            <Typography />
-            <IntElements />
+        <div className="flex flex-between pyb-n" style={{"--padding-space" : "3rem"}}>
+          <img className="logo" src={logo} alt="logo of star" style={{"margin" : "0"}}/>
+          <h1 className="ff-serif uppercase">Design system</h1>
         </div>
+          <Colors />
+          <Typography />
+          <IntElements />
+      </div>
     </div>
   );
 }
@@ -22,14 +27,14 @@ function Colors(){
       <h2 className='numbered-title'><span>01</span> colors</h2>
       
       <div className='flex box-shadow'>
-          <div className="block">
+          <div className="flex flex-col flex-basis-100">
             <div className="colors__divs ff-serif fs-500" style={{"color" : "white"}}>
                 #0B0D17
             </div>
             <p className="txt-white flex ff-serif my-1"><span className="txt-light ">RGB</span>11, 13, 23</p>
             <p className="txt-white flex ff-serif"><span className="txt-light">HSL</span>230°, 35%, 7%</p>
           </div>
-          <div className="block">
+          <div className="flex flex-col flex-basis-100">
             <div className="colors__divs ff-serif fs-500 bg-light" style={{
               "color" : "black"}}>
                 #D0D6F9
@@ -37,7 +42,7 @@ function Colors(){
             <p className="txt-white flex ff-serif my-1"><span className="txt-light">RGB</span> 11, 13, 23</p>
             <p className="txt-white flex ff-serif"><span className="txt-light">HSL</span>230°, 35%, 7%</p>
           </div>
-          <div className="block">
+          <div className="flex flex-col flex-basis-100">
             <div className="colors__divs ff-serif fs-500 bg-white" style={{
             "color" : "black"}}>
                 #FFFFFF

@@ -189,6 +189,9 @@ input, button, textarea, select{
 .p-1{
   padding: 1rem;
 }
+.pyb-n{
+  padding-bottom: var(--padding-space, 1rem);
+}
 .pyb-1h{
   padding-block: 1.5rem;
 }
@@ -214,9 +217,12 @@ input, button, textarea, select{
   border-bottom: var(--border, 2px) solid hsl( var(--clr-white) / .1)
 }
 .colors__divs{
-  padding: 3rem 10rem 1rem 1rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
   border: 1px solid hsl(var(--clr-light) / .4); 
-  text-align: left
+  text-align: left;
+  justify-self: end;
 }
 .wh-nowrap{
   white-space: nowrap;
