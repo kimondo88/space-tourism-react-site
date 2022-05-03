@@ -52,7 +52,7 @@ function Colors(){
 
 function Typography(){
   return (
-    <section id="typography"  style={{"margin": "4rem 0"}}>
+    <section id="typography"  style={{"margin": "4rem 0", "--flow-space" : "1rem"}}>
       <h2 className='numbered-title'><span>02 </span>Typography</h2>
       <div className="flex">
           <div className='flex-basis-100 flow'>
@@ -107,28 +107,27 @@ function IntElements(){
   return (
     <section className='flow' id="interactive-elements">
                 <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
-                
                 {/* <!-- navigation --> */}
                 <div>
                   <nav>
                       <ul className="primary-navigation underline-indicator bg-white--alpha flex flex-center flex-gap-8">
+                        <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
                           <li className='active'>
-                            <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
-                              <span className='mxr-1'>00</span>Active
-                            </Link>
+                                <span className='mxr-1'>00</span>Active
                           </li>
-                          <li>
-                            <Link 
+                        </Link>
+                          <Link 
                             className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" 
                             to="/">
+                            <li>
                               <span className='mxr-1'>01</span>Hovered
-                            </Link>
-                          </li>
-                          <li className="pyb-1h">
-                            <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" to="/">
+                            </li>
+                          </Link>
+                          <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase" to="/">
+                            <li className="pyb-1h">
                               <span className='mxr-1'>02</span>Idle                           
-                            </Link>
-                          </li>
+                            </li>
+                          </Link>
                       </ul>
                   </nav>
                 </div>
@@ -142,13 +141,13 @@ function IntElements(){
                         <p className='txt-light ff-serif fs-300 self-center'>Landing Page Main Button - Hover</p>
                     </div>
                     
-                    <div className='flow flex flex-col flex-around' style={{"--flow-space" : " 1rem", "width" : "100%"}}>
+                    <div className='flow flex flex-col flex-around' style={{"--flow-space" : " 1.5rem", "width" : "100%"}}>
                         {/* <!-- Tabs --> */}
                         <div className='tabs flex flex-col self-center' >
                             <div className="flex underline-indicator" aria-required>
-                              <button aria-pressed="true" className='bg-dark ff-sans-cond fs-200 txt-white letter-spacing-2 uppercase active'>Moon</button>
-                              <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button>
-                              <button aria-pressed="false" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button>
+                              <div className=""><button aria-selected="true" role="tab" className='bg-dark ff-sans-cond fs-200 txt-white letter-spacing-2 uppercase active'>Moon</button></div>
+                              <div className=""><button aria-selected="false" role="tab" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase hover'>Mars</button></div>
+                              <div className=""><button aria-selected="false" role="tab" className='bg-dark ff-sans-cond fs-200 txt-light letter-spacing-2 uppercase '>Europa</button></div>
                             </div>
                             <p className='ff-sans-cond txt-light fs-200 self-center'>Tabs(Active, Hover & Idle)</p>
                         </div>
@@ -156,11 +155,11 @@ function IntElements(){
                          {/* <!-- Dots --> */}
                          <div className="flex flex-col">
                             <div className="flex flex flex-cc dot-indicators" aria-required>
-                              <button aria-pressed="true"><span className='sr-only'>
+                              <button aria-selected="true"  role="tab"><span className='sr-only'>
                                 Slide title</span></button>
-                              <button aria-pressed="false"><span className='sr-only'>
+                              <button aria-selected="false" role="tab"><span className='sr-only'>
                                 Slide title</span></button>
-                              <button aria-pressed="false"><span className='sr-only'>
+                              <button aria-selected="false" role="tab"><span className='sr-only'>
                                 Slide title</span></button>
                             </div>
                             <p className='ff-sans-cond txt-light fs-200 self-center'>Slider 1 States (Active, Hover & Idle)</p>

@@ -23,7 +23,7 @@ root.render(
       <Route path="/destination/:celestial" element={<Destination />}/>
       <Route path="/crew/:member" element={<Crew />}/>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
