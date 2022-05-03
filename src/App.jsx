@@ -11,7 +11,7 @@ function App() {
       <div className="container">
         <div className="flex flex-between pyb-n" style={{"--padding-space" : "3rem"}}>
           <img className="logo" src={logo} alt="logo of star" style={{"margin" : "0"}}/>
-          <h1 className="ff-serif uppercase">Design system</h1>
+          <h1 className="ff-sans-cond txt-light uppercase">Design system</h1>
         </div>
           <Colors />
           <Typography />
