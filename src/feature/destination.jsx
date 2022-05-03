@@ -82,7 +82,7 @@ export default function Destination() {
                             <span aria-hidden="true">01</span> Destination</li></Link>
                         <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li>
                             <span aria-hidden="true">02</span> Crew</li></Link> 
-                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/technology/launchvehicle"><li>
                             <span aria-hidden="true">03</span> Technology</li></Link> 
                     </ul>
                 </nav>

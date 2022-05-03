@@ -155,6 +155,10 @@ input, button, textarea, select{
   margin-top: 3rem;
   grid-row: 2;
 }
+.grid-container--technology{
+  display: grid;
+  margin-top: 3rem;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -453,6 +457,11 @@ input, button, textarea, select{
   display: block;
   margin: 0 auto;
 }
+.img-tech{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 .primary-navigation{
   padding: 0; 
   margin: 0;
@@ -522,24 +531,24 @@ input, button, textarea, select{
   background-color: hsl( var(--clr-white) / 1)
 }
 
-.num-indicators > *{
+.num-indicators > * > *{
   width: fit-content;
   cursor: pointer;
   color:hsl( var(--clr-white));
   border: 0;
   border-radius: 50%;
-  aspect-ratio: 1;
-  padding: 0.5em;
+  aspect-ratio: 2 / 1;
+  padding: .75em;
   background-color: hsl( var(--clr-white) / 0);
   border: 2px solid hsl( var(--clr-white) / .25);
 }
 
-.num-indicators > *:hover,
-.num-indicators > *:focus{
+.num-indicators > * > *:hover,
+.num-indicators > * > *:focus{
   border-color: hsl( var(--clr-white) / .5);
 }
 
-.num-indicators > .active{
+.num-indicators > * > [aria-selected="true"]{
   color: hsl( var(--clr-dark));
   background-color: hsl( var(--clr-white) / 1);
 }
@@ -666,6 +675,9 @@ input, button, textarea, select{
   .grid-container--crew article{
     grid-area: content;
   }
+  .grid-container--technology{
+    grid-template-columns: 1fr minmax(0, 60ch) minmax(0, 30rem) 1fr;
+  }
   .primary-navigation{
     display: flex;
     position: relative;
@@ -755,6 +767,26 @@ input, button, textarea, select{
     padding-top: 6rem;
     place-self: start;
   }
+  .grid-container--technology{
+    grid-template-areas: 
+    '. title title .'
+    '. content image .'
+    '. content image .';
+    grid-row: 2 / 4;
+    gap: var(--gap, 2rem);
+  }
+  
+  .grid-container--technology .col-2{
+    grid-row: 2;
+    grid-column: 3;
+    border-bottom: 0;
+  }
+  .grid-container--technology .col-3{
+    grid-column:2;
+    grid-row: 2;
+    border-bottom: 0;
+    place-self: center;
+  }
   .col-2{
     grid-column: 2;
     place-content: center;
@@ -770,6 +802,11 @@ input, button, textarea, select{
     margin: 0;
     grid-column: 1;
     grid-row: 2;
+    place-self: start;
+  }
+  .numbered-title-300--technology{
+    margin: 0;
+    grid-area: title;
     place-self: start;
   }
   .line{

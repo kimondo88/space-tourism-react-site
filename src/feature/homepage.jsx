@@ -45,7 +45,7 @@ export default function Homepage() {
                             <span aria-hidden="true">01</span> Destination</li></Link>
                         <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li>
                             <span aria-hidden="true">02</span> Crew</li></Link> 
-                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/technology/launchvehicle"><li>
                             <span aria-hidden="true">03</span> Technology</li></Link> 
                     </ul>
                 </nav>
@@ -59,7 +59,7 @@ export default function Homepage() {
                         because we'll give you a truly out of this world experience!</p>
                 </div>
                 <div className="m-button">
-                    <Link className="large-button anim bg-white txt-dark ff-serif uppercase" style={{"fontSize" : "2rem"}}to="/">Explore</Link>
+                    <Link className="large-button anim bg-white txt-dark ff-serif uppercase" style={{"fontSize" : "2rem"}}to="/destination/Moon">Explore</Link>
                 </div>
             </main>
         </div>

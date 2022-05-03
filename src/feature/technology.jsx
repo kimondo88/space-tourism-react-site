@@ -4,32 +4,40 @@ import { useParams } from "react-router-dom";
 import logo from "../assets/shared/logo.svg"
 import data from "../data.json";
 
-export default function Crew() {
+export default function Technology() {
     // const [imgPath,  setImgPath] = useState('');
-    let { member } = useParams();
-    const memberData = data.crew.filter(item => {
+    let { tech } = useParams();
+    const techData = data.technology.filter(item => {
         let joinString = item["name"];
         joinString = joinString.toLowerCase().split(" ");
-        joinString = joinString[0].concat(joinString[1]);
-        return joinString === member
+        if(joinString.length > 1){
+            joinString = joinString[0].concat(joinString[1]);
+        }else{
+            joinString = joinString[0];
+        }
+        return joinString === tech
     })
-    const memberMap = data.crew.map(item => {
+    const techMap = data.technology.map(item => {
         let joinString = item["name"];
         joinString = joinString.toLowerCase().split(" ");
-        joinString = joinString[0].concat(joinString[1]);
+        if(joinString.length > 1){
+            joinString = joinString[0].concat(joinString[1]);
+        }else{
+            joinString = joinString[0];
+        }
         return joinString
     })
     let tabIndex = 0;
 
     useEffect(()=>{
         const body = document.querySelector('body');
-        if(body.classList.contains('bg-crew')){
+        if(body.classList.contains('bg-technology')){
 
         }else{
-            body.classList.toggle('bg-crew');
+            body.classList.toggle('bg-technology');
         }
         return () =>{
-            body.classList.toggle('bg-crew');
+            body.classList.toggle('bg-technology');
         }
     },[])
     useEffect(()=>{
@@ -70,7 +78,7 @@ export default function Crew() {
         const active = document.querySelector('[aria-selected="true"]')
         const setActive = document.getElementById(id);
         active.setAttribute('aria-selected', false);
-        return setActive.setAttribute('aria-selected', true);
+        return setActive.firstChild.setAttribute('aria-selected', true);
     }
     return (    
         <div className="grid">
@@ -90,89 +98,62 @@ export default function Crew() {
                     <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/home"><li><span aria-hidden="true">00</span>Home</li></Link>
                         <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/destination/Moon"><li>
                             <span aria-hidden="true">01</span> Destination</li></Link>
-                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li className="active">
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/crew/douglashurley"><li>
                             <span aria-hidden="true">02</span> Crew</li></Link> 
-                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li>
+                        <Link className="txt-white ff-sans-cond letter-spacing-2" tabIndex="1" to="/"><li className="active">
                             <span aria-hidden="true">03</span> Technology</li></Link> 
                     </ul>
                 </nav>
             </header>
             
-            <main id="main" className="grid-container grid-container--crew">
-                <h1 className='numbered-title-300 numbered-title-300--crew' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your Crew</h1>
+            <main id="main" className="grid-container grid-container--technology">
+                <h1 className='numbered-title-300 numbered-title-300--technology' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your technology</h1>
                 <div className="col-2 border-b">
-                    <CrewImage data={memberData[0]} />
+                    <TechnologyImage data={techData[0]} />
                 </div>
-                <div className="col-3 grid-container--crew">
+                <div className="col-3 flex">
                         <nav>
                             <div className="flex flex-col pyb-1h">
-                                <div className="flex flex flex-cc dot-indicators" role="tablist" >
-                                    <Link id={memberMap[0]} 
-                                    aria-selected="true"
-                                    role="tab"
-                                    tabIndex="0" 
-                                    to={'/crew/' + memberMap[0]} 
-                                    onClick={() => selectActive(memberMap[0])}/>                                        
-                                    <span className='sr-only'>
-                                        The Commander</span>
-                                    <Link id={memberMap[1]} 
-                                    aria-selected="false"
-                                    role="tab"
-                                    tabIndex="-1" 
-                                     to={'/crew/' + memberMap[1]}
-                                     onClick={() => selectActive(memberMap[1])}/>
-                                     <span className='sr-only'>
-                                        The Mission Specialist</span>
-                                    <Link id={memberMap[2]} 
-                                    aria-selected="false"
-                                    role="tab"
-                                    tabIndex="-1" 
-                                     to={'/crew/' + memberMap[2]}
-                                     onClick={() => selectActive(memberMap[2])}/>
-                                     <span className='sr-only'>
-                                        Pilot</span>
-                                    <Link id={memberMap[3]} 
-                                    aria-selected="false"
-                                    role="tab"
-                                    tabIndex="-1" 
-                                     to={'/crew/' + memberMap[3]}
-                                     onClick={() => selectActive(memberMap[3])}/>
-                                     <span className='sr-only'>
-                                        Flight Engineer</span>
+                                <div className="flex flex-col self-center num-indicators" role="tablist">
+                                <Link id={techMap[0]} to={"/technology/" + techMap[0]} onClick={()=> selectActive(techMap[0])}><button role="tab" aria-selected="true">1
+                                    </button></Link>
+                                <Link id={techMap[1]} to={"/technology/" + techMap[1]} onClick={()=> selectActive(techMap[1])}><button role="tab" aria-selected="false">2
+                                    </button></Link>
+                                <Link id={techMap[2]} to={"/technology/" + techMap[2]} onClick={()=> selectActive(techMap[2])}><button role="tab" aria-selected="false">3
+                                    </button></Link>
                                 </div>
                             </div>
                         </nav>
-                        <CrewText data={memberData[0]}/>
+                        <TechnologyText data={techData[0]}/>
                     </div>
             </main>
         </div>
     )
 }
 
-function CrewImage(props){
+function TechnologyImage(props){
     return (
         <picture>
-            <source className="img-crew" srcSet={props.data.images.webp}
+            <source className="img-tech" srcSet={props.data.images.webp}
             type="image/webp"/>
-            <img className="img-crew" 
-                src={props.data.images.png} 
-                alt="crew member" 
+            <img className="img-tech" 
+                src={props.data.images.landscape} 
+                alt="technology tech" 
                 style={{"paddingTop" : "1rem"}}/>
         </picture>
         
     )
 }
 
-function CrewText(props){
+function TechnologyText(props){
     
     return(
-        <article className="planet-text--crew" tabIndex="0">
+        <article className="planet-text--technology" tabIndex="0">
             <header className="flow">
-                <h3 className='txt-light ff-serif fs-600 letter-spacing-3 uppercase my-1'
-                style={{"opacity" : ".5"}}>{props.data.role}</h3>
-                <p className="ff-serif fs-700 uppercase lh-11">{props.data.name}</p>
+                <p className="txt-light ff-serif fs-200 uppercase letter-spacing-3">The terminology...</p>
+                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.name}</h3>
+                <p className="txt-light ff-serif fs-300">{props.data.description}</p>
             </header>
-            <p className="txt-light ff-sans-normal fs-200" style={{"marginTop" : "2rem"}}>{props.data.bio}</p>
         </article>
     )
 }

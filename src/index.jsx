@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import Homepage from './feature/homepage';
 import Destination from './feature/destination';
 import Crew from './feature/crew';
+import Technology from './feature/technology';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
@@ -22,6 +23,7 @@ root.render(
       <Route path="/home" element={<Homepage />}/>
       <Route path="/destination/:celestial" element={<Destination />}/>
       <Route path="/crew/:member" element={<Crew />}/>
+      <Route path="/technology/:tech" element={<Technology/>}/>
     </Routes>
   </BrowserRouter>
 );
