@@ -113,9 +113,9 @@ function IntElements(){
     <section className='flow' id="interactive-elements">
                 <h2 className="numbered-title"><span>03</span> Interactive elements</h2>
                 {/* <!-- navigation --> */}
-                <div>
+                <div className='flow'>
                   <nav>
-                      <ul className="primary-navigation underline-indicator bg-white--alpha flex flex-center flex-gap-8">
+                      <ul className="primary-navigation primary-navigation--main underline-indicator bg-white--alpha flex flex-evenly">
                         <Link className="txt-white ff-serif fs-200 letter-spacing-2 uppercase " to="/">
                           <li className='active'>
                                 <span className='mxr-1'>00</span>Active
@@ -135,6 +135,9 @@ function IntElements(){
                           </Link>
                       </ul>
                   </nav>
+                  <h3 className='txt-light fs-300' style={{"textAlign" : "center", "marginTop" : "2.5rem"}}>
+                    Different States of Navigation Bar
+                  </h3>
                 </div>
                 
                 <div className="flex">

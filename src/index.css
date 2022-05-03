@@ -332,6 +332,10 @@ input, button, textarea, select{
 .flex-between{
   justify-content: space-between;
 }
+.flex-evenly{
+  justify-content: space-evenly;
+  align-content: center;
+}
 .flex-end{
   justify-content: flex-end;
 }
@@ -795,6 +799,10 @@ input, button, textarea, select{
     padding-left: 5em;
     --gap: 0.5rem;
     --underline-gap: 1.5rem;
+  }
+  .primary-navigation--main {
+    padding-right: 0;
+    padding-left: 0;
   }
   .primary-navigation--destination{
     place-content: start;
