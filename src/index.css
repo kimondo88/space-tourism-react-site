@@ -686,20 +686,23 @@ input, button, textarea, select{
     grid-area: content;
   }
   .grid-container--technology{
-    grid-template-columns: 1fr minmax(0, 60ch) minmax(0, 30rem) 1fr;
+    grid-row: 2;
   }
   .primary-navigation{
     display: flex;
     position: relative;
     flex-direction: row;
     inset: unset;
-    padding-inline: 3rem;
+    padding-inline: clamp(.5rem, 2vh, 1.5rem);
     flex-basis: 30%;
     --gap: 0.2rem;
     --underline-gap: 1rem;
   }
   .primary-navigation--destination{
     --gap: 0.4rem;
+  }
+  .underline-indicator > * > * {
+    padding-block: calc(var(--underline-gap) + .5rem);
   }
   .dot-indicators > *{
     padding: .3rem;
@@ -711,8 +714,14 @@ input, button, textarea, select{
     display: flex;
     justify-content: space-around;
   }
+  .planet-text--technology{
+    grid-area: content;
+  }
   .img-crew{
     width: 70%;
+  }
+  .img-tech{
+    grid-area: image;
   }
   .bg-home-d{
     background-image: url("/public/assets/home/background-home-tablet.jpg");
