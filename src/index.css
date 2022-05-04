@@ -653,9 +653,6 @@ input, button, textarea, select{
 
 
 @media (min-width: 600px){
-  .flow :first-child{
-    margin-top: 2.5rem;
-  }
   .grid-container{
     padding-top: max(1em, 3em);
   }
@@ -738,6 +735,9 @@ input, button, textarea, select{
 }
 
 @media (max-width: 899px) and (min-width: 600px){
+  .flow :first-child{
+    margin-top: 2.5rem;
+  }
   .numbered-title-300{
     position: absolute;
     top: 10%;
@@ -790,31 +790,46 @@ input, button, textarea, select{
     place-self: start;
   }
   .grid-container--technology{
+    grid-template-columns: 1fr 3fr 3fr 1fr;
     grid-template-areas: 
     '. title title .'
     '. content image .'
     '. content image .';
     grid-row: 2 / 4;
-    gap: var(--gap, 2rem);
+    gap: 3rem;
   }
-  
+  .grid-container--technology .flex-col{
+    flex-direction: row;
+  }
+  .grid-container--technology .num-indicators{
+    flex-direction: column;
+    --gap: 2.5rem;
+  }
+  .num-indicators > * > *{
+    padding: 1rem;
+    font-size: var(--fs-500);
+  }
+  .grid-container--technology nav{
+    place-self: end;
+  }
   .grid-container--technology .col-2{
-    grid-row: 2;
-    grid-column: 3;
+    grid-area: image;
     border-bottom: 0;
+    place-self: end;
   }
   .grid-container--technology .col-3{
-    grid-column:2;
-    grid-row: 2;
+    grid-area: content;
     border-bottom: 0;
     place-self: center;
   }
   .col-2{
     grid-column: 2;
+    
     place-content: center;
   }
   .col-3{
     grid-column: 3;
+    gap: 3rem;
   }
   .numbered-title-300{
     display: absolute;
@@ -872,6 +887,13 @@ input, button, textarea, select{
   .planet-text_bottom{
     justify-content: start;
     gap: 4rem;
+  }
+  .planet-text--technology{
+    --flow-space: .5rem;
+    text-align: left;
+  }
+  .planet-text--technology :first-child{
+    margin-inline: 0;
   }
   .dot-indicators > *{
     padding: .45rem;
