@@ -254,7 +254,9 @@ input, button, textarea, select{
 }
 .bg-tech{
   background-image: url("./assets/technology/background-technology-mobile.jpg");
-}
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 /* colors */
 
@@ -901,7 +903,8 @@ input, button, textarea, select{
     --flow-space: .5rem;
     text-align: left;
   }
-  .planet-text--technology :first-child{
+  .planet-text--technology :first-child,
+  .planet-text--technology :last-child {
     margin-inline: 0;
   }
   .dot-indicators > *{
@@ -929,7 +932,7 @@ input, button, textarea, select{
     background-image: url("./assets/technology/background-technology-desktop.jpg");
   }
 }
-}
+
 
 /* supports queries */
 
