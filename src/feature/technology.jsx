@@ -107,7 +107,9 @@ export default function Technology() {
             </header>
             
             <main id="main" className="grid-container grid-container--technology">
-                <h1 className='numbered-title-300 numbered-title-300--technology' style={{"marginTop":"1rem"}}><span aria-hidden="true">02</span> Meet your technology</h1>
+                <h1 className='numbered-title-300 numbered-title-300--technology txt-white ff-sans-cond fs-400 letter-spacing-1' 
+                    style={{"marginTop":"1rem"}}>
+                    <span aria-hidden="true">03</span> Space launch 101</h1>
                 <div className="col-2 border-b">
                     <TechnologyImage data={techData[0]} />
                 </div>
@@ -168,7 +170,7 @@ function TechnologyText(props){
         <article className="planet-text--technology" tabIndex="0">
             <header className="flow">
                 <p className="txt-light ff-sans-cond fs-200 uppercase letter-spacing-3">The terminology...</p>
-                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase'>{props.data.name}</h3>
+                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase wh-nowrap'>{props.data.name}</h3>
                 <p className="txt-light ff-sans-cond fs-300">{props.data.description}</p>
             </header>
         </article>
