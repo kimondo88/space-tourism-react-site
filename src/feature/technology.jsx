@@ -31,13 +31,13 @@ export default function Technology() {
 
     useEffect(()=>{
         const body = document.querySelector('body');
-        if(body.classList.contains('bg-technology')){
+        if(body.classList.contains('bg-tech')){
 
         }else{
-            body.classList.toggle('bg-technology');
+            body.classList.toggle('bg-tech');
         }
         return () =>{
-            body.classList.toggle('bg-technology');
+            body.classList.toggle('bg-tech');
         }
     },[])
     useEffect(()=>{
