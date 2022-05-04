@@ -176,12 +176,12 @@ function IntElements(){
                         {/*<!-- Numbers --> */}
                         <div className="flex flex-col">
                             <div className="flex flex-col self-center num-indicators" aria-required>
-                              <button className='active' aria-pressed="true">1
-                                </button>
-                              <button aria-pressed="false">2
-                                </button>
-                              <button aria-pressed="false">3
-                                </button>
+                              <Link to="#"><button className='active' aria-selected="true" role="tab">1
+                                </button></Link>
+                              <Link to="#"><button aria-selected="false" role="tab">2
+                                </button></Link>
+                              <Link to="#"><button aria-selected="false" role="tab">3
+                                </button></Link>
                             </div>
                             <p className='ff-sans-cond txt-light fs-200 self-center'>Slider 2 States (Active, Hover & Idle)</p>
                         </div>

@@ -111,16 +111,34 @@ export default function Technology() {
                 <div className="col-2 border-b">
                     <TechnologyImage data={techData[0]} />
                 </div>
-                <div className="col-3 flex">
+                <div className="col-3 flex flex-col" style={{"--gap" : "0"}}>
                         <nav>
-                            <div className="flex flex-col pyb-1h">
-                                <div className="flex flex-col self-center num-indicators" role="tablist">
-                                <Link id={techMap[0]} to={"/technology/" + techMap[0]} onClick={()=> selectActive(techMap[0])}><button role="tab" aria-selected="true">1
-                                    </button></Link>
-                                <Link id={techMap[1]} to={"/technology/" + techMap[1]} onClick={()=> selectActive(techMap[1])}><button role="tab" aria-selected="false">2
-                                    </button></Link>
-                                <Link id={techMap[2]} to={"/technology/" + techMap[2]} onClick={()=> selectActive(techMap[2])}><button role="tab" aria-selected="false">3
-                                    </button></Link>
+                            <div className="flex flex-cc">
+                                <div className="flex num-indicators" role="tablist">
+                                    <Link 
+                                        id={techMap[0]} 
+                                        to={"/technology/" + techMap[0]} 
+                                        onClick={()=> selectActive(techMap[0])}>
+                                        <button role="tab" aria-selected="true">
+                                        1
+                                        </button>
+                                    </Link>
+                                    <Link 
+                                        id={techMap[1]} 
+                                        to={"/technology/" + techMap[1]} 
+                                        onClick={()=> selectActive(techMap[1])}>
+                                        <button role="tab" aria-selected="false">
+                                            2
+                                        </button>
+                                    </Link>
+                                    <Link 
+                                        id={techMap[2]} 
+                                        to={"/technology/" + techMap[2]} 
+                                        onClick={()=> selectActive(techMap[2])}>
+                                        <button role="tab" aria-selected="false">
+                                            3
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </nav>
@@ -151,7 +169,7 @@ function TechnologyText(props){
         <article className="planet-text--technology" tabIndex="0">
             <header className="flow">
                 <p className="txt-light ff-serif fs-200 uppercase letter-spacing-3">The terminology...</p>
-                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase my-1'>{props.data.name}</h3>
+                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase'>{props.data.name}</h3>
                 <p className="txt-light ff-serif fs-300">{props.data.description}</p>
             </header>
         </article>

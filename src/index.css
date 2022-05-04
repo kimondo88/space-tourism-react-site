@@ -531,6 +531,10 @@ input, button, textarea, select{
   background-color: hsl( var(--clr-white) / 1)
 }
 
+.num-indicators{
+  place-self: center;
+  --gap: 1rem;
+}
 .num-indicators > * > *{
   width: fit-content;
   cursor: pointer;
@@ -577,6 +581,12 @@ input, button, textarea, select{
 }
 .planet-text_bottom p{
   margin: 0 auto;
+}
+.planet-text--technology{
+  --flow-space: 1.5rem;
+}
+.planet-text--technology p{
+  margin-inline: auto;
 }
 /* ------------------- */
 /* MEDIA QUERIES       */
