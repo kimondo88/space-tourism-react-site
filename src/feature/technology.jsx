@@ -152,12 +152,11 @@ export default function Technology() {
 function TechnologyImage(props){
     return (
         <picture>
-            <source className="img-tech" srcSet={props.data.images.webp}
-            type="image/webp"/>
-            <img className="img-tech" 
-                src={props.data.images.landscape} 
-                alt="technology tech" 
-                style={{"paddingTop" : "1rem"}}/>
+            <source className="img-tech" 
+                media="(min-width: 900px)" 
+                srcSet={props.data.images.portrait}
+                alt={props.data.name}/>
+            <img src={props.data.images.landscape} alt={props.data.name} />
         </picture>
         
     )
