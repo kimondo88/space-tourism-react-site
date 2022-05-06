@@ -126,6 +126,16 @@ input, button, textarea, select{
 /* Utility  classes  */
 /* ---------------   */
 
+/*  animation */
+    
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 /* general */
 .flex{
   display: flex;
@@ -379,6 +389,17 @@ input, button, textarea, select{
 }
 .grid-container > * > p {
   padding-inline: 5%;
+}
+
+.col-2{
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.col-3{
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 /* ------------- */
 /*  ids          */
