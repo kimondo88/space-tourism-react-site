@@ -170,7 +170,7 @@ function TechnologyText(props){
         <article className="planet-text--technology" tabIndex="0">
             <header className="flow">
                 <p className="txt-light ff-sans-cond fs-200 uppercase letter-spacing-3">The terminology...</p>
-                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase wh-nowrap'>{props.data.name}</h3>
+                <h3 className='txt-white ff-serif fs-700 letter-spacing-3 uppercase'>{props.data.name}</h3>
                 <p className="txt-light ff-sans-cond fs-300">{props.data.description}</p>
             </header>
         </article>
