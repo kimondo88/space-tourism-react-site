@@ -960,7 +960,23 @@ input, button, textarea, select{
 
 @supports (not (backdrop-filter: blur(81.5485px))){
   .bg-dark--alpha{
-    background-color: hsl( var(--clr-white) / .95);
+    background-color: hsl( var(--clr-dark) / .65);
   }
 }
 
+/*  support for firefox */
+@supports (-moz-appearance:none) {
+  .num-indicators > * > * {
+    padding: 1.5rem;
+    aspect-ratio: 2 / 2;
+  }
+  .num-indicators p{
+    margin-top: -.5rem;
+  }
+  @media (min-width: 900px){
+    .num-indicators p{
+      margin-top: -1rem;
+    }
+  }
+  
+}

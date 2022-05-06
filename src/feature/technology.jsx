@@ -122,7 +122,7 @@ export default function Technology() {
                                         to={"/technology/" + techMap[0]} 
                                         onClick={()=> selectActive(techMap[0])}>
                                         <button role="tab" aria-selected="true">
-                                        1
+                                        <p>1</p>
                                         </button>
                                     </Link>
                                     <Link 
@@ -130,7 +130,7 @@ export default function Technology() {
                                         to={"/technology/" + techMap[1]} 
                                         onClick={()=> selectActive(techMap[1])}>
                                         <button role="tab" aria-selected="false">
-                                            2
+                                            <p>2</p>
                                         </button>
                                     </Link>
                                     <Link 
@@ -138,7 +138,7 @@ export default function Technology() {
                                         to={"/technology/" + techMap[2]} 
                                         onClick={()=> selectActive(techMap[2])}>
                                         <button role="tab" aria-selected="false">
-                                            3
+                                            <p>3</p>
                                         </button>
                                     </Link>
                                 </div>
